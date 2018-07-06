@@ -34,7 +34,9 @@ SOURCES += main.cpp\
     promise.cpp \
     externalpageparser.cpp \
     globalvar.cpp \
-    downloaderui.cpp
+    downloaderui.cpp \
+    qtjson.cpp \
+    form.cpp
 
 HEADERS  += mainwindow.h \
     settingsdialog.h \
@@ -49,12 +51,15 @@ HEADERS  += mainwindow.h \
     promise.h \
     externalpageparser.h \
     globalvar.h \
-    downloaderui.h
+    downloaderui.h \
+    qtjson.h \
+    form.h
 
 FORMS    += mainwindow.ui \
     settingsdialog.ui \
     advanceddialog.ui \
-    downloaderui.ui
+    downloaderui.ui \
+    form.ui
 
 RESOURCES += \
     res.qrc

@@ -6,6 +6,7 @@ Settings::Settings(QDir baseDir, QObject *parent) :
 {
     settingsPrivate = new QSettings("YYJHAO","IVLEDownloader");
     _token = settingsPrivate->value("token","").toString();
+    TOKEN=settingsPrivate->value("token","").toString();
     _directory = settingsPrivate->value("directory","").toString();
     DIRECTORY=settingsPrivate->value("directory","").toString();
     _notify = settingsPrivate->value("notify",true).toBool();

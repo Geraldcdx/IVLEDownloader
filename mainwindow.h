@@ -59,7 +59,6 @@ private slots:
     void ivleLoginPage();
     void getAPIkey();
     void parse(bool);
-
     QSettings* InitRegSettings();
     void SetMyValue(QString key, QVariant value);
     QVariant GetMyValue(QString key, QVariant defaultValue);

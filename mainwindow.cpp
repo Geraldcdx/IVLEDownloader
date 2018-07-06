@@ -148,6 +148,7 @@ MainWindow::MainWindow(QWidget *parent) :
         QString keys=GetMyValue("KEY","h").toString();
         qDebug()<<keys;
         DownloaderUI UI;
+        UI.setWindowFlags(Qt::Window);
         UI.setModal(true);
         UI.exec();
 
@@ -155,6 +156,7 @@ MainWindow::MainWindow(QWidget *parent) :
         QString keys=GetMyValue("KEY","h").toString();
         qDebug()<<keys;
         DownloaderUI UI;
+        UI.setWindowFlags(Qt::Window);//add this to set windowflags
         UI.setModal(true);
         UI.exec();
 
@@ -196,21 +198,6 @@ void MainWindow::parse(bool){
     qDebug()<<keys;
 }
 
-//A collection of functions that use QSettings to store settings variables. This stores settings in the registry of the computer and hence permanent even after the app is closed
-QSettings* MainWindow:: InitRegSettings()
-{
-    QSettings* regSett;
-    regSett = new QSettings("Organization-name","Project-name");
-    return regSett;
-}
-void MainWindow::SetMyValue(QString key, QVariant value)
-{
-    InitRegSettings()->setValue(key,value); //Store value of key defined by user
-}
-    QVariant MainWindow:: GetMyValue(QString key, QVariant defaultValue)
-{
-    return InitRegSettings()->value(key,defaultValue);//Get value of a key-value pair
-}
 
 void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason){
     icon->setIcon(normalIcon);
@@ -366,3 +353,19 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::openFolder(){
     QDesktopServices::openUrl(QString("file:///") + settings->directory());
 }
+//A collection of functions that use QSettings to store settings variables. This stores settings in the registry of the computer and hence permanent even after the app is closed
+QSettings* MainWindow:: InitRegSettings()
+{
+    QSettings* regSett;
+    regSett = new QSettings("Organization-name","Project-name");
+    return regSett;
+}
+void MainWindow::SetMyValue(QString key, QVariant value)
+{
+    InitRegSettings()->setValue(key,value); //Store value of key defined by user
+}
+    QVariant MainWindow:: GetMyValue(QString key, QVariant defaultValue)
+{
+    return InitRegSettings()->value(key,defaultValue);//Get value of a key-value pair
+}
+

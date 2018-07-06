@@ -3,3 +3,5 @@
 
 QString APIKEY= "NULL";
 QString DIRECTORY="NULL";
+QString TOKEN="NULL";
+

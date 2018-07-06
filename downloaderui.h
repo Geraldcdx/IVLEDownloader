@@ -3,6 +3,15 @@
 
 #include <QDialog>
 #include <QFileSystemModel>
+#include <QJsonObject>
+#include <QUrl>
+#include <QWebView>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QWebElement>
+#include <QWebFrame>
+#include <QTextDocument>
 
 namespace Ui {
 class DownloaderUI;
@@ -14,17 +23,32 @@ class DownloaderUI : public QDialog
 
 public:
     explicit DownloaderUI(QWidget *parent = 0);
+    void storeintolist();
+    void continued();
+    void announcementParsing();
+    void addModulesTabs();
     ~DownloaderUI();
 
 private slots:
     void on_treeView_clicked(const QModelIndex &index);
-
     void on_listView_clicked(const QModelIndex &index);
+    void parse(bool);
+    void parse2(bool);
+    void ModulesPageLoader();
+
 
 private:
     Ui::DownloaderUI *ui;
     QFileSystemModel *dirmodel;
     QFileSystemModel *listmodel;
+    QWebView *innerPage = new QWebView();
+    QWebView *innerPage2 = new QWebView();
+    QMap<QString,QString> modulesmap;
+    QList<QUrl> modulelist;
+    QList<QString>courselist;
+    QString mod;
+    int cnt;
+
 };
 
 #endif // DOWNLOADERUI_H
