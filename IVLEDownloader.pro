@@ -36,7 +36,8 @@ SOURCES += main.cpp\
     globalvar.cpp \
     downloaderui.cpp \
     qtjson.cpp \
-    form.cpp
+    form.cpp \
+    dialog.cpp
 
 HEADERS  += mainwindow.h \
     settingsdialog.h \
@@ -53,13 +54,15 @@ HEADERS  += mainwindow.h \
     globalvar.h \
     downloaderui.h \
     qtjson.h \
-    form.h
+    form.h \
+    dialog.h
 
 FORMS    += mainwindow.ui \
     settingsdialog.ui \
     advanceddialog.ui \
     downloaderui.ui \
-    form.ui
+    form.ui \
+    dialog.ui
 
 RESOURCES += \
     res.qrc

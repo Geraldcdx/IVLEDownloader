@@ -39,6 +39,10 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_3_clicked();
+
 private:
     Ui::DownloaderUI *ui;
     QFileSystemModel *dirmodel;
@@ -50,6 +54,12 @@ private:
     QList<QString>courselist;
     QString mod;
     int cnt;
+
+    float Units=0,gradescore,CAP=0,totalcreditunits=0,previousCAP;
+    QMap<QString,float> convert;
+    enum columns{
+        first,second,third,fourth
+    };
 
 };
 

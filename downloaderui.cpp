@@ -19,6 +19,7 @@
 #include <QWebView>
 #include <QTimer>
 #include <QPixmap>
+#include "dialog.h"
 
 DownloaderUI::DownloaderUI(QWidget *parent) :
     QDialog(parent),
@@ -64,6 +65,23 @@ DownloaderUI::DownloaderUI(QWidget *parent) :
     //Add NUSWhispers
     QString link = "https://www.nuswhispers.com/home/";
     ui->webView->load(link);
+
+    //Adding CAP calculator
+    ui->tableWidget->setColumnCount(4);
+    QStringList headers;
+    headers<<"Module"<<"Credit Units"<<"Grade"<<"Current CAP";
+    ui->tableWidget->setHorizontalHeaderLabels(headers);
+    convert["A+"]=5.0;
+    convert["A"]=5.0;
+    convert["A-"]=4.5;
+    convert["B+"]=4.0;
+    convert["B"]=3.5;
+    convert["B-"]=3.0;
+    convert["C+"]=2.5;
+    convert["C"]=2.0;
+    convert["D+"]=1.5;
+    convert["D"]=1.0;
+    convert["F"]=0;
 }
 
 //ANNOUNCEMENT UI
@@ -235,4 +253,47 @@ DownloaderUI::~DownloaderUI()
 void DownloaderUI::on_pushButton_clicked()
 {
     QDesktopServices::openUrl(QUrl("https://nusmods.com/timetable/sem-1"));
+}
+
+//CAP CALCULATOR UI
+
+//Press to add module and calculate CAP
+void DownloaderUI::on_pushButton_2_clicked()
+{
+    Dialog add;
+    int outcome;
+    add.setWindowTitle("Add a module!");
+    outcome=add.exec();
+    if(outcome==QDialog::Rejected){
+        return;
+    }
+    else{
+        QString mod=add.Module();
+        QString grade=add.Grade();
+        float units=add.Creditunits();
+
+        //qDebug()<<mod<<grade<<units;
+        previousCAP=totalcreditunits*CAP;//takes the previous cap
+        totalcreditunits+=units;//total units
+        gradescore=convert[grade];
+        CAP=(gradescore*units+previousCAP)/totalcreditunits;
+        qDebug()<<gradescore<<units<<previousCAP<<totalcreditunits;
+
+        //sets the tables
+        int num=ui->tableWidget->rowCount();
+        ui->tableWidget->insertRow(ui->tableWidget->rowCount());
+        ui->tableWidget->setItem(num,first,new QTableWidgetItem(mod));
+        ui->tableWidget->setItem(num,second,new QTableWidgetItem(QString::number(units)));
+        ui->tableWidget->setItem(num,third,new QTableWidgetItem(grade));
+        ui->tableWidget->setItem(num,fourth,new QTableWidgetItem(QString::number(CAP)));
+        //qDebug()<<mod<<grade<<units;
+    }
+}
+
+//Clears the rows of CAP workings
+void DownloaderUI::on_pushButton_3_clicked()
+{
+    previousCAP=0;
+    totalcreditunits=0;
+    ui->tableWidget->setRowCount(0);
 }
