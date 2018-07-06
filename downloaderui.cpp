@@ -18,6 +18,7 @@
 #include <QJsonObject>
 #include <QWebView>
 #include <QTimer>
+#include <QPixmap>
 
 DownloaderUI::DownloaderUI(QWidget *parent) :
     QDialog(parent),
@@ -53,6 +54,16 @@ DownloaderUI::DownloaderUI(QWidget *parent) :
     QTimer *timer = new QTimer(this);
     QObject::connect(timer, SIGNAL(timeout()), this, SLOT(ModulesPageLoader()));
     timer->start(3600000); //time specified in ms to poll modulesPageLoader every 1 hour first
+
+    //Add Timetable
+    QString dir=DIRECTORY;
+    dir.append("/My Timetable.png");
+    QPixmap pic(dir);
+    ui->label->setPixmap(pic.scaled(1000,450,Qt::KeepAspectRatio,Qt::SmoothTransformation));
+
+    //Add NUSWhispers
+    QString link = "https://www.nuswhispers.com/home/";
+    ui->webView->load(link);
 }
 
 //ANNOUNCEMENT UI
@@ -219,4 +230,9 @@ void DownloaderUI::on_listView_clicked(const QModelIndex &index)
 DownloaderUI::~DownloaderUI()
 {
     delete ui;
+}
+
+void DownloaderUI::on_pushButton_clicked()
+{
+    QDesktopServices::openUrl(QUrl("https://nusmods.com/timetable/sem-1"));
 }

@@ -37,6 +37,8 @@ private slots:
     void ModulesPageLoader();
 
 
+    void on_pushButton_clicked();
+
 private:
     Ui::DownloaderUI *ui;
     QFileSystemModel *dirmodel;
