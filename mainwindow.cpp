@@ -2,11 +2,14 @@
 #include "ui_mainwindow.h"
 #include "globalvar.h"
 #include "downloaderui.h"
-
+#include <QtSql>
+#include <QSqlDatabase>
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+//    QSqlDatabase db=QSqlDatabase::addDatabase("QSQLITE");
+//    db.setDatabaseName(DIRECTORY);
     //creating the UI
     APIKEY=GetMyValue("KEY","NULL").toString();
 

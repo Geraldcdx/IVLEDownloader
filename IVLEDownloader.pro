@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui\
+QT       += core gui sql\
             widgets\
             webkitwidgets\
             network
@@ -37,7 +37,10 @@ SOURCES += main.cpp\
     downloaderui.cpp \
     qtjson.cpp \
     form.cpp \
-    dialog.cpp
+    dialog.cpp \
+    taskitem.cpp \
+    additem.cpp \
+    item.cpp
 
 HEADERS  += mainwindow.h \
     settingsdialog.h \
@@ -55,14 +58,20 @@ HEADERS  += mainwindow.h \
     downloaderui.h \
     qtjson.h \
     form.h \
-    dialog.h
+    dialog.h \
+    taskitem.h \
+    additem.h \
+    item.h
 
 FORMS    += mainwindow.ui \
     settingsdialog.ui \
     advanceddialog.ui \
     downloaderui.ui \
     form.ui \
-    dialog.ui
+    dialog.ui \
+    taskitem.ui \
+    additem.ui \
+    item.ui
 
 RESOURCES += \
     res.qrc

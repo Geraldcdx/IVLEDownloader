@@ -12,6 +12,7 @@
 #include <QWebElement>
 #include <QWebFrame>
 #include <QTextDocument>
+#include <QSqlDatabase>
 
 namespace Ui {
 class DownloaderUI;
@@ -27,7 +28,14 @@ public:
     void continued();
     void announcementParsing();
     void addModulesTabs();
-    ~DownloaderUI();
+    void makeDB(QString path);
+    void addvalues(QString,int);
+    void pull();
+       ~DownloaderUI();
+
+public slots:
+    void deleted(QString);
+    void update(QString,int);
 
 private slots:
     void on_treeView_clicked(const QModelIndex &index);
@@ -42,6 +50,7 @@ private slots:
     void on_pushButton_2_clicked();
 
     void on_pushButton_3_clicked();
+    void on_pushButton_4_clicked();
 
 private:
     Ui::DownloaderUI *ui;
@@ -60,6 +69,7 @@ private:
     enum columns{
         first,second,third,fourth
     };
+    QSqlDatabase db;
 
 };
 

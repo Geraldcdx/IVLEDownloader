@@ -52,5 +52,5 @@ void Dialog::on_buttonBox_accepted()
 
 void Dialog::on_buttonBox_rejected()
 {
-    rejected();
+    reject();
 }

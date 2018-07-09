@@ -20,13 +20,26 @@
 #include <QTimer>
 #include <QPixmap>
 #include "dialog.h"
+#include "item.h"
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QGroupBox>
+#include <QPushButton>
+#include <QRadioButton>
+#include "additem.h"
+#include <QtSql>
+#include <QPushButton>
+#include <QSqlDatabase>
 
 DownloaderUI::DownloaderUI(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::DownloaderUI)
 {
     ui->setupUi(this);
-
+    QString DB=DIRECTORY;
+    DB.append("/db.sqlite");
+    makeDB(DB);
+    pull();
     //Creates the FileSystemModel for the TreeView which is the right widget
     //QString sPath="C:/Users";  //Change this such that you can issue your own relative path
     QString sPath= DIRECTORY;
@@ -296,4 +309,87 @@ void DownloaderUI::on_pushButton_3_clicked()
     previousCAP=0;
     totalcreditunits=0;
     ui->tableWidget->setRowCount(0);
+}
+
+//For the To-Do-List UI
+
+
+void DownloaderUI::on_pushButton_4_clicked()
+{
+    AddItem add;
+    add.exec();
+    QString item=add.GetText();
+    Item *i=new Item;
+    connect(i,SIGNAL(itemdeleted(QString)),this,SLOT(deleted(QString)));
+    i->setText(item);
+    i->setProgress(0);
+    connect(i,SIGNAL(changeVal(QString,int)),this,SLOT(update(QString,int)));
+    ui->verticalLayout_12->addWidget(i);
+    addvalues(item,0);
+}
+void DownloaderUI::addvalues(QString Item,int Progress)
+{
+    if(!db.open()) qDebug()<<"FAILED";
+    QSqlQuery qry;
+    qry.prepare("INSERT INTO todoDB ("
+                "Item,"
+                "Progress)"
+                "VALUES (?,?);");
+    qry.addBindValue(Item);
+    qry.addBindValue(Progress);
+    if(!qry.exec())qDebug()<<"qruy failed";
+    db.close();
+}
+void DownloaderUI::update(QString Item,int Progress)
+{
+    if(!db.open()) qDebug()<<"FAILED";
+    QSqlQuery qry;
+    qry.prepare("update todoDB set Item=?,Progress=? where Item=?" );
+    qry.addBindValue(Item);
+    qry.addBindValue(Progress);
+    qry.addBindValue(Item);
+    if(!qry.exec())qDebug()<<"Doesn't work";
+    db.close();
+}
+void DownloaderUI::deleted(QString Item)
+{
+    if(!db.open()) qDebug()<<"FAILED";
+    QSqlQuery qry;
+    qry.prepare("delete from todoDB where Item=?");
+    qry.addBindValue(Item);
+    if(!qry.exec())qDebug()<<"GG";
+    db.close();
+}
+
+void DownloaderUI::pull()
+{
+    if(!db.open()) qDebug()<<"FAILED";
+    QSqlQuery qry;
+    qry.prepare("SELECT Item,Progress FROM todoDB");
+    qry.exec();
+    //int num=1;
+    //QString str="i";
+    while (qry.next()){
+            QSqlRecord record = qry.record();
+            qDebug() <<record.value("Item").toString()<<record.value("Progress").toInt();
+            Item *i=new Item;
+            connect(i,SIGNAL(itemdeleted(QString)),this,SLOT(deleted(QString)));
+            i->setText(record.value("Item").toString());
+            i->setProgress(record.value("Progress").toInt());
+            connect(i,SIGNAL(changeVal(QString,int)),this,SLOT(update(QString,int)));
+            ui->verticalLayout_12->addWidget(i);
+        }
+    db.close();
+}
+void DownloaderUI::makeDB(QString path)
+{
+    db=QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName(path);//"C:/Users/Gerald/Desktop/orbitaltest/db.sqlite"
+    if(!db.open()) qDebug()<<"FAILED";
+    QString query="CREATE TABLE todoDB ("
+                  "Item VARCHAR(150),"
+                   "Progress integer);";
+    QSqlQuery qry;
+    if(!qry.exec(query)) qDebug()<<"Query failed or Database already created";
+    db.close();
 }
