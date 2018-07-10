@@ -30,6 +30,7 @@
 #include <QtSql>
 #include <QPushButton>
 #include <QSqlDatabase>
+#include <QMessageBox>
 
 DownloaderUI::DownloaderUI(QWidget *parent) :
     QDialog(parent),
@@ -267,6 +268,7 @@ DownloaderUI::~DownloaderUI()
 }
 
 //Exam Details UI
+
 void DownloaderUI::setExamTable()
 {
     //setting the headers of the Exams tab
@@ -281,8 +283,7 @@ void DownloaderUI::examsParsing()
     continued2();
 }
 void DownloaderUI::continued2(){
-     if(cnt < modulelist.size()){
-         mod=courselist.at(cnt);
+     if(cnt2 < modulelist.size()){
          innerPage3->setUrl(examslist.at(cnt2));//connects to parse3(bool)
      }
      else
@@ -343,6 +344,10 @@ void DownloaderUI::setTableHeaders()
     headers<<"Module"<<"Credit Units"<<"Grade"<<"Current CAP";
     ui->tableWidget->setHorizontalHeaderLabels(headers);
     loadCAPscores();//loads the cap scores
+    ui->tableWidget_3->setAlternatingRowColors(true);
+    ui->tableWidget_3->resizeColumnsToContents();
+    ui->tableWidget_4->setAlternatingRowColors(true);
+    ui->tableWidget_4->resizeColumnsToContents();
 }
 //Press to add module and calculate CAP
 void DownloaderUI::on_pushButton_2_clicked()
@@ -398,7 +403,29 @@ void DownloaderUI::on_pushButton_3_clicked()
     totalcreditunits=0;
     ui->tableWidget->setRowCount(0);
 }
-
+void DownloaderUI::on_pushButton_5_clicked()
+{
+    //Write function to determine 1st class honours assuming 160MCS
+    float current=CAP*totalcreditunits;
+    float unitsleft=160-totalcreditunits;
+    //1st class
+    float firstclass=(4.5*160-current)/unitsleft;
+    //2nd upper
+    float secondclass=(4.0*160-current)/unitsleft;
+    //2nd lower
+    float secondlower=(3.5*160-current)/unitsleft;
+    float thirdclass=(3.0*160-current)/unitsleft;
+    float pass=(2.0*160-current)/unitsleft;
+    QString string;
+    string.append("The numbers reflected are the minimum average grade you need for the remaining modular credits units towards 160mcs:\n\n");
+    string.append("To get 1st Class Honours(CPA=4.5) you need "+QString::number(firstclass)+"\n\n");
+    string.append("To get 2nd Upper Class Honours(CPA=4.0) you need "+QString::number(secondclass)+"\n\n");
+    string.append("To get 2nd Lower Class Honours(CPA=3.5) you need "+QString::number(secondlower)+"\n\n");
+    string.append("To get 3rd Class Honours(CPA=3.0) you need "+QString::number(thirdclass)+"\n\n");
+    string.append("To get pass(CPA=2.0) you need "+QString::number(pass)+"\n\n");
+    string.append("JiaYou and all the Best");
+    QMessageBox::information(this,"CAP Goals",string);
+}
 //For the To-Do-List UI
 
 //Makes new items
@@ -490,3 +517,5 @@ void DownloaderUI::makeDB(QString path)
     if(!qry.exec(query)) qDebug()<<"Query failed or Database already created";
     db.close();
 }
+
+

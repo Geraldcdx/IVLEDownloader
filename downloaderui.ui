@@ -17,7 +17,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>2</number>
+      <number>5</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -68,7 +68,7 @@
        <item>
         <widget class="QTabWidget" name="tabWidget_2">
          <property name="currentIndex">
-          <number>1</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="nouse1">
           <attribute name="title">
@@ -152,11 +152,18 @@
       <attribute name="title">
        <string>CAP Calculator</string>
       </attribute>
-      <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout_10">
+        <layout class="QVBoxLayout" name="verticalLayout_7">
          <item>
-          <widget class="QTableWidget" name="tableWidget"/>
+          <widget class="QTableWidget" name="tableWidget">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
          </item>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -168,6 +175,13 @@
             </widget>
            </item>
            <item>
+            <widget class="QPushButton" name="pushButton_5">
+             <property name="text">
+              <string>CAP Goals</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QPushButton" name="pushButton_3">
              <property name="text">
               <string>Clear</string>
@@ -175,6 +189,296 @@
             </widget>
            </item>
           </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QGridLayout" name="gridLayout">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetNoConstraint</enum>
+         </property>
+         <item row="1" column="0">
+          <widget class="QTableWidget" name="tableWidget_3">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <row>
+            <property name="text">
+             <string>1</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>2</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>3</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>4</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>5</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>6</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>7</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>8</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>9</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>10</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>11</string>
+            </property>
+           </row>
+           <column>
+            <property name="text">
+             <string>Alphabetical Grade</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Score</string>
+            </property>
+           </column>
+           <item row="0" column="0">
+            <property name="text">
+             <string>A+</string>
+            </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
+            </property>
+           </item>
+           <item row="0" column="1">
+            <property name="text">
+             <string>5.0</string>
+            </property>
+           </item>
+           <item row="1" column="0">
+            <property name="text">
+             <string>A</string>
+            </property>
+           </item>
+           <item row="1" column="1">
+            <property name="text">
+             <string>5.0</string>
+            </property>
+           </item>
+           <item row="2" column="0">
+            <property name="text">
+             <string>A-</string>
+            </property>
+           </item>
+           <item row="2" column="1">
+            <property name="text">
+             <string>4.5</string>
+            </property>
+           </item>
+           <item row="3" column="0">
+            <property name="text">
+             <string>B+</string>
+            </property>
+           </item>
+           <item row="3" column="1">
+            <property name="text">
+             <string>4.0</string>
+            </property>
+           </item>
+           <item row="4" column="0">
+            <property name="text">
+             <string>B</string>
+            </property>
+           </item>
+           <item row="4" column="1">
+            <property name="text">
+             <string>3.5</string>
+            </property>
+           </item>
+           <item row="5" column="0">
+            <property name="text">
+             <string>B-</string>
+            </property>
+           </item>
+           <item row="5" column="1">
+            <property name="text">
+             <string>3.0</string>
+            </property>
+           </item>
+           <item row="6" column="0">
+            <property name="text">
+             <string>C+</string>
+            </property>
+           </item>
+           <item row="6" column="1">
+            <property name="text">
+             <string>2.5</string>
+            </property>
+           </item>
+           <item row="7" column="0">
+            <property name="text">
+             <string>C</string>
+            </property>
+           </item>
+           <item row="7" column="1">
+            <property name="text">
+             <string>2.0</string>
+            </property>
+           </item>
+           <item row="8" column="0">
+            <property name="text">
+             <string>D+</string>
+            </property>
+           </item>
+           <item row="8" column="1">
+            <property name="text">
+             <string>1.5</string>
+            </property>
+           </item>
+           <item row="9" column="0">
+            <property name="text">
+             <string>D</string>
+            </property>
+           </item>
+           <item row="9" column="1">
+            <property name="text">
+             <string>1.0</string>
+            </property>
+           </item>
+           <item row="10" column="0">
+            <property name="text">
+             <string>F</string>
+            </property>
+           </item>
+           <item row="10" column="1">
+            <property name="text">
+             <string>0</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QTableWidget" name="tableWidget_4">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Ignored" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <row>
+            <property name="text">
+             <string>New Row</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>1</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>2</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>3</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>5</string>
+            </property>
+           </row>
+           <column>
+            <property name="text">
+             <string>HONOURS DEGREE CLASSIFICATION</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>	CAP CUT-OFFS</string>
+            </property>
+           </column>
+           <item row="0" column="0">
+            <property name="text">
+             <string>Honours (Highest Distinction) / First Class Honours</string>
+            </property>
+           </item>
+           <item row="0" column="1">
+            <property name="text">
+             <string>&gt;4.50</string>
+            </property>
+           </item>
+           <item row="1" column="0">
+            <property name="text">
+             <string>Honours (Distinction) / Second Upper Class</string>
+            </property>
+           </item>
+           <item row="1" column="1">
+            <property name="text">
+             <string>4.00 – 4.49</string>
+            </property>
+           </item>
+           <item row="2" column="0">
+            <property name="text">
+             <string>Honours (Merit) / Second Lower Honours</string>
+            </property>
+           </item>
+           <item row="2" column="1">
+            <property name="text">
+             <string>3.50 – 3.99</string>
+            </property>
+           </item>
+           <item row="3" column="0">
+            <property name="text">
+             <string>Honours / Third Class Honours</string>
+            </property>
+           </item>
+           <item row="3" column="1">
+            <property name="text">
+             <string>3.00 – 3.49</string>
+            </property>
+           </item>
+           <item row="4" column="0">
+            <property name="text">
+             <string>Pass</string>
+            </property>
+           </item>
+           <item row="4" column="1">
+            <property name="text">
+             <string>2.00 – 2.99</string>
+            </property>
+           </item>
+          </widget>
          </item>
         </layout>
        </item>
