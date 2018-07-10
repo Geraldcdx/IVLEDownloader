@@ -395,11 +395,6 @@
            </property>
            <row>
             <property name="text">
-             <string>New Row</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
              <string>1</string>
             </property>
            </row>
@@ -411,6 +406,11 @@
            <row>
             <property name="text">
              <string>3</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>4</string>
             </property>
            </row>
            <row>

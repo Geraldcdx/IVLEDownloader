@@ -348,6 +348,9 @@ void DownloaderUI::setTableHeaders()
     ui->tableWidget_3->resizeColumnsToContents();
     ui->tableWidget_4->setAlternatingRowColors(true);
     ui->tableWidget_4->resizeColumnsToContents();
+    for(int i=0;i<11;i++)
+        for(int j=0;j<2;j++)
+            ui->tableWidget_3->item(i,j)->setTextAlignment(Qt::AlignCenter);
 }
 //Press to add module and calculate CAP
 void DownloaderUI::on_pushButton_2_clicked()
