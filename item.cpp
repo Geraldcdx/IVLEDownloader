@@ -1,3 +1,4 @@
+//This folder file is used to create the Item widget for the to-do-list
 #include "item.h"
 #include "ui_item.h"
 #include "mainwindow.h"

@@ -1,3 +1,4 @@
+//Form is used to create a new module tab for announcements
 #include "form.h"
 #include "ui_form.h"
 
@@ -14,6 +15,7 @@ Form::~Form()
 }
 void Form ::settingofText(QString text)
 {
-    ui->textEdit->setText(text);
+    ui->textBrowser->setText(text);
+
 }
 

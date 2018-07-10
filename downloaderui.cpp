@@ -165,7 +165,7 @@ void DownloaderUI::parse2(bool)
     QWebFrame *frameInner2 = innerPage2->page()->mainFrame();
     QWebElement doc = frameInner2->documentElement();
     QString json2=doc.toPlainText();// json2 is a QString containing the JSON data
-    //qDebug()<<json2;
+    qDebug()<<json2;
 
     //same as in parse(bool)
     bool ok;
@@ -174,15 +174,23 @@ void DownloaderUI::parse2(bool)
       qFatal("An error occurred during parsing");
     }
     //qDebug()<<"Testing the printing of Json:   "<<result["Comments"].toString();
-
-
     QString strann;
     foreach(QVariant plugin, result["Results"].toList()) {//for[]
          QtJson::JsonObject nested = plugin.toMap();
-         QTextDocument doc,doc2;
+         QTextDocument doc,doc2,doc3,doc4;
          doc.setHtml(nested["Title"].toString());//Strips the HTML from the given information
          doc2.setHtml(nested["Description"].toString());
+         doc3.setHtml(nested["CreatedDate_js"].toString());
+         QString str=doc3.toPlainText();
+         QString subString = str.mid(0,10);//extraction of the date
+         QString subString2=str.mid(11,8);//extraction of the time
+         str="";
+         str.append("Date: "+subString+"        Time: "+subString2);
+         QtJson::JsonObject nested2=nested["Creator"].toMap();
+         doc4.setHtml(nested2["Name"].toString());
          strann.append("------------------------------------------------------------------------------------------------------------------------------ANNOUNCEMENT-------------------------------------------------------------------------------------------------------------\n");
+         strann.append(str+"\n\n");
+         strann.append("Written by: "+doc4.toPlainText()+"\n\n");
          strann.append(doc.toPlainText());
          strann.append("\n");
          strann.append(doc2.toPlainText());
@@ -322,10 +330,16 @@ void DownloaderUI::on_pushButton_3_clicked()
 }
 
 //For the To-Do-List UI
+
+//Makes new items
 void DownloaderUI::on_pushButton_4_clicked()
 {
     AddItem add;
-    add.exec();
+    int outcome;
+    outcome=add.exec();
+    if(outcome==QDialog::Rejected){
+        return;
+    }
     QString item=add.GetText();
     Item *i=new Item;
     connect(i,SIGNAL(itemdeleted(QString)),this,SLOT(deleted(QString)));
@@ -335,6 +349,7 @@ void DownloaderUI::on_pushButton_4_clicked()
     ui->verticalLayout_12->addWidget(i);
     addvalues(item,0);
 }
+//Add values to the DB
 void DownloaderUI::addvalues(QString Item,int Progress)
 {
     if(!db.open()) qDebug()<<"FAILED";
@@ -348,6 +363,7 @@ void DownloaderUI::addvalues(QString Item,int Progress)
     if(!qry.exec())qDebug()<<"qruy failed";
     db.close();
 }
+//Update Values in the DB
 void DownloaderUI::update(QString Item,int Progress)
 {
     if(!db.open()) qDebug()<<"FAILED";
@@ -359,6 +375,7 @@ void DownloaderUI::update(QString Item,int Progress)
     if(!qry.exec())qDebug()<<"Doesn't work";
     db.close();
 }
+//Delete Values in DB
 void DownloaderUI::deleted(QString Item)
 {
     if(!db.open()) qDebug()<<"FAILED";
@@ -369,6 +386,7 @@ void DownloaderUI::deleted(QString Item)
     db.close();
 }
 
+//Sets up the UI based on saved information
 void DownloaderUI::pull()
 {
     if(!db.open()) qDebug()<<"FAILED";
@@ -389,6 +407,7 @@ void DownloaderUI::pull()
         }
     db.close();
 }
+//Intialises a DB
 void DownloaderUI::makeDB(QString path)
 {
     db=QSqlDatabase::addDatabase("QSQLITE");

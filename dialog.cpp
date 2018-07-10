@@ -1,3 +1,4 @@
+//This is the Dialog to add your modules information to be preprocessed into grades
 #include "dialog.h"
 #include "ui_dialog.h"
 #include <QMessageBox>
