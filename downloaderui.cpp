@@ -43,9 +43,11 @@ DownloaderUI::DownloaderUI(QWidget *parent) :
     makeDB(DB);//makes the Database based on path DB
     pull();//draws out all information for to-do-list
     setupFiles(DIRECTORY);//FILES TAB //change directory to make it your own path
+    setExamTable();//Sets exams tabs information
     //ANNOUNCEMENT UI
     connect(innerPage, SIGNAL(loadFinished(bool)), SLOT(parse(bool)));//connects with modules code and ID parsing
     connect(innerPage2, SIGNAL(loadFinished(bool)), SLOT(parse2(bool)));//connects with announcement parsing 
+    connect(innerPage3, SIGNAL(loadFinished(bool)), SLOT(parse3(bool)));//connects with exam details parsing
     removeTabs();//removes all the default tabs
     ModulesPageLoader();//Load announcement modules pages
     poll(); //Timer to poll every 1 hour
@@ -90,6 +92,7 @@ QObject::connect(timer, SIGNAL(timeout()), this, SLOT(ModulesPageLoader()));
 timer->start(3600000); //time specified in ms to poll modulesPageLoader every 1 hour first
 
 }
+
 void DownloaderUI::ModulesPageLoader()
 {
     QString modules=QString("https://ivle.nus.edu.sg/api/Lapi.svc/Modules?APIKey=%1&AuthToken=%2&Duration=0&IncludeAllInfo=false").arg(APIKEY).arg(TOKEN);
@@ -125,7 +128,7 @@ void DownloaderUI::parse(bool)
     //---------------ENDS HERE-----------------------------------
     storeintolist();
     announcementParsing();//this starts the announcement parsing
-
+    examsParsing();//Parse exam info
 }
 
 //Stores all QUrls into modulelist and CourseNAme
@@ -134,9 +137,11 @@ void DownloaderUI::storeintolist()
     QMapIterator<QString, QString> iter(modulesmap);
     while(iter.hasNext()){
         iter.next();
-        //qDebug()<<iter.key();
-        QString str=QString("https://ivle.nus.edu.sg/API/Lapi.svc/Announcements?APIKey=OLRtFGIWu0X2ce3rEfAzE&AuthToken=1973134E762926E27F69FD82D61628D9BF638F547331C85F50E81AEC4D2FD35D926B0963555F4A8D3A62379E1B046AE329A834EA42E5287F32DE17C4155E9F59F425407BCC40D9FA786F1591419E496309CF997843BF951780B6015D1C0BDADEE2EAA18D0C97C3BF90C944A389480F231BA35B3D819E8063B9403B42FC2453D57EE2F62367F27D8DDD352E53B81D846C39AA0E07747598C336792D8167E1FBD024603E83B166E21697FBEE19376667B44E87492DA6B98BF8EE7FC070A29DF7C3C7B3DFFAC872474635DB8D60EDD8B2BB27AAE39D7DBC21C93AEB9CB9E93D3FEEF8FEB7F68AA72E9679818DAFE1C89FD9&CourseID=%1&Duration=0&TitleOnly=false&output=json").arg(iter.value());
-        modulelist.append(QUrl(str));//For courseID, e.g. wfjefkawrgbawruh-42y8qwr2q- == gibberish string
+        //qDebug()<<iter.key()<<iter.value();
+        QString str=QString("https://ivle.nus.edu.sg/API/Lapi.svc/Announcements?APIKey=%1&AuthToken=%2&CourseID=%3&Duration=0&TitleOnly=false&output=json").arg(APIKEY).arg(TOKEN).arg(iter.value());
+        QString str2=QString("https://ivle.nus.edu.sg/api/Lapi.svc/Timetable_ModuleExam?APIKey=%1&AuthToken=%2&CourseID=%3").arg(APIKEY).arg(TOKEN).arg(iter.value());
+        modulelist.append(QUrl(str));//For URL with courseID, e.g. wfjefkawrgbawruh-42y8qwr2q- == gibberish string
+        examslist.append(QUrl(str2));//For URL with course ID to parse exam information
         courselist.append(iter.key());//For courseName e.g.2040
     }
 }
@@ -147,9 +152,11 @@ void DownloaderUI::continued(){
          mod=courselist.at(cnt);
          innerPage2->setUrl(modulelist.at(cnt));//connects to parse2(bool)
          //qDebug()<<cnt;
+
      }
      else addModulesTabs();
 }
+
 
 //Starts the loading of webpages by calling continued()
 void DownloaderUI::announcementParsing()
@@ -165,7 +172,7 @@ void DownloaderUI::parse2(bool)
     QWebFrame *frameInner2 = innerPage2->page()->mainFrame();
     QWebElement doc = frameInner2->documentElement();
     QString json2=doc.toPlainText();// json2 is a QString containing the JSON data
-    qDebug()<<json2;
+    //qDebug()<<json2;
 
     //same as in parse(bool)
     bool ok;
@@ -259,6 +266,69 @@ DownloaderUI::~DownloaderUI()
     delete ui;
 }
 
+//Exam Details UI
+void DownloaderUI::setExamTable()
+{
+    //setting the headers of the Exams tab
+    ui->tableWidget_2->setColumnCount(2);
+    QStringList headers;
+    headers<<"Module"<<"Date of Exam";
+    ui->tableWidget_2->setHorizontalHeaderLabels(headers);
+}
+void DownloaderUI::examsParsing()
+{
+    cnt2=0;
+    continued2();
+}
+void DownloaderUI::continued2(){
+     if(cnt < modulelist.size()){
+         mod=courselist.at(cnt);
+         innerPage3->setUrl(examslist.at(cnt2));//connects to parse3(bool)
+     }
+     else
+     {
+         ui->tableWidget_2->resizeColumnsToContents();
+         return;
+     }
+}
+//Parses Exam information
+void DownloaderUI::parse3(bool)
+{
+    QWebFrame *frameInner3 = innerPage3->page()->mainFrame();
+    QWebElement doc = frameInner3->documentElement();
+    QString json=doc.toPlainText();// json2 is a QString containing the JSON data
+    //qDebug()<<json;
+
+    //same as in parse(bool)
+    bool ok;
+    QtJson::JsonObject result = QtJson::parse(json, ok).toMap();
+    if(!ok) {
+      qFatal("An error occurred during parsing");
+    }
+    //qDebug()<<"Testing the printing of Json:   "<<result["Comments"].toString();
+    QString strann,ExamInfo,ModuleCode;
+    foreach(QVariant plugin, result["Results"].toList()) {//for[]
+         QtJson::JsonObject nested = plugin.toMap();
+         QTextDocument doc,doc2;
+         doc.setHtml(nested["ExamInfo"].toString());//Strips the HTML from the given information
+         doc2.setHtml(nested["ModuleCode"].toString());
+         //sets the additional exam dates
+         ExamInfo=doc.toPlainText();
+         ModuleCode=doc2.toPlainText();
+         qDebug()<<ExamInfo<<ModuleCode;
+    }
+    //qDebug()<<strann;
+    if(ExamInfo!=""){
+        int num=ui->tableWidget_2->rowCount();
+        ui->tableWidget_2->insertRow(ui->tableWidget_2->rowCount());
+        ui->tableWidget_2->setItem(num,f,new QTableWidgetItem(ModuleCode));
+        ui->tableWidget_2->setItem(num,s,new QTableWidgetItem(ExamInfo));
+    }
+        cnt2++;//iterates to continue the loop
+        continued2();
+
+}
+
 void DownloaderUI::on_pushButton_clicked()
 {
     QDesktopServices::openUrl(QUrl("https://nusmods.com/timetable/sem-1"));
@@ -294,7 +364,7 @@ void DownloaderUI::on_pushButton_2_clicked()
         totalcreditunits+=units;//total units
         gradescore=convert[grade];
         CAP=(gradescore*units+previousCAP)/totalcreditunits;
-        qDebug()<<gradescore<<units<<previousCAP<<totalcreditunits;
+        //qDebug()<<gradescore<<units<<previousCAP<<totalcreditunits;
 
         //sets the tables
         int num=ui->tableWidget->rowCount();
