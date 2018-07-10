@@ -31,6 +31,11 @@ public:
     void makeDB(QString path);
     void addvalues(QString,int);
     void pull();
+    void loadCAPscores();
+    void removeTabs();
+    void setupFiles(QString);
+    void poll();
+    void setTableHeaders();
        ~DownloaderUI();
 
 public slots:

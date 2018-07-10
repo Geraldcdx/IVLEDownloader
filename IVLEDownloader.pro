@@ -38,7 +38,6 @@ SOURCES += main.cpp\
     qtjson.cpp \
     form.cpp \
     dialog.cpp \
-    taskitem.cpp \
     additem.cpp \
     item.cpp
 
@@ -59,7 +58,6 @@ HEADERS  += mainwindow.h \
     qtjson.h \
     form.h \
     dialog.h \
-    taskitem.h \
     additem.h \
     item.h
 
@@ -69,7 +67,6 @@ FORMS    += mainwindow.ui \
     downloaderui.ui \
     form.ui \
     dialog.ui \
-    taskitem.ui \
     additem.ui \
     item.ui
 

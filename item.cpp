@@ -7,12 +7,12 @@ Item::Item(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->horizontalSlider->setMaximum(100);
-    connect(ui->horizontalSlider,SIGNAL(valueChanged(int)),this,SLOT(func(int)));
+    connect(ui->horizontalSlider,SIGNAL(sliderReleased()),this,SLOT(func()));
 }
 
-void Item::func(int a)
+void Item::func()
 {
-    emit changeVal(getText(),a);
+    emit changeVal(getText(),getProgress());
 }
 Item::~Item()
 {

@@ -36,70 +36,60 @@ DownloaderUI::DownloaderUI(QWidget *parent) :
     ui(new Ui::DownloaderUI)
 {
     ui->setupUi(this);
+
+    //Datebase creation
     QString DB=DIRECTORY;
     DB.append("/db.sqlite");
-    makeDB(DB);
-    pull();
-    //Creates the FileSystemModel for the TreeView which is the right widget
-    //QString sPath="C:/Users";  //Change this such that you can issue your own relative path
-    QString sPath= DIRECTORY;
-    dirmodel = new QFileSystemModel(this);
-    dirmodel ->setFilter(QDir::NoDotAndDotDot|QDir::AllDirs);//Change this such that you are able to set your own filters
-    ui->treeView->setModel(this->dirmodel);
-    dirmodel->setRootPath(sPath);
-    ui->treeView->setRootIndex(dirmodel->index(sPath));
-    //qDebug()<<QDir::currentPath();
-
-    //Creates the FileSystemModel for the listview, the right file widget
-    listmodel=new QFileSystemModel(this);
-    listmodel->setRootPath(sPath);
-    ui->listView->setModel(listmodel);
-
-    //Adding announcement tabs
+    makeDB(DB);//makes the Database based on path DB
+    pull();//draws out all information for to-do-list
+    setupFiles(DIRECTORY);//FILES TAB //change directory to make it your own path
+    //ANNOUNCEMENT UI
     connect(innerPage, SIGNAL(loadFinished(bool)), SLOT(parse(bool)));//connects with modules code and ID parsing
-    connect(innerPage2, SIGNAL(loadFinished(bool)), SLOT(parse2(bool)));//connects with announcement parsing
-    //removes all the default tabs
-    ui->tabWidget_2->setCurrentIndex(0);
-    ui->tabWidget_2->removeTab(2);
-    ui->tabWidget_2->removeTab(1);
-    ui->tabWidget_2->removeTab(0);
-    ModulesPageLoader();
-    //Timer Setting
-    QTimer *timer = new QTimer(this);
-    QObject::connect(timer, SIGNAL(timeout()), this, SLOT(ModulesPageLoader()));
-    timer->start(3600000); //time specified in ms to poll modulesPageLoader every 1 hour first
-
+    connect(innerPage2, SIGNAL(loadFinished(bool)), SLOT(parse2(bool)));//connects with announcement parsing 
+    removeTabs();//removes all the default tabs
+    ModulesPageLoader();//Load announcement modules pages
+    poll(); //Timer to poll every 1 hour
+    ui->webView->load(QUrl("https://www.nuswhispers.com/home/")); //Add NUSWhispers
+    setTableHeaders();//Adding CAP calculator
     //Add Timetable
     QString dir=DIRECTORY;
     dir.append("/My Timetable.png");
     QPixmap pic(dir);
     ui->label->setPixmap(pic.scaled(1000,450,Qt::KeepAspectRatio,Qt::SmoothTransformation));
+}
+//Preprocessing that clears default tabs
+void DownloaderUI::removeTabs()
+{
+    ui->tabWidget_2->setCurrentIndex(0);
+    ui->tabWidget_2->removeTab(2);
+    ui->tabWidget_2->removeTab(1);
+    ui->tabWidget_2->removeTab(0);
+}
+//FILES UI
+void DownloaderUI::setupFiles(QString sPath)
+{
+    //Creates the FileSystemModel for the TreeView which is the right widget
+    dirmodel = new QFileSystemModel(this);
+    dirmodel ->setFilter(QDir::NoDotAndDotDot|QDir::AllDirs);//Change this such that you are able to set your own filters
+    ui->treeView->setModel(this->dirmodel);
+    dirmodel->setRootPath(sPath);
+    ui->treeView->setRootIndex(dirmodel->index(sPath));
 
-    //Add NUSWhispers
-    QString link = "https://www.nuswhispers.com/home/";
-    ui->webView->load(link);
-
-    //Adding CAP calculator
-    ui->tableWidget->setColumnCount(4);
-    QStringList headers;
-    headers<<"Module"<<"Credit Units"<<"Grade"<<"Current CAP";
-    ui->tableWidget->setHorizontalHeaderLabels(headers);
-    convert["A+"]=5.0;
-    convert["A"]=5.0;
-    convert["A-"]=4.5;
-    convert["B+"]=4.0;
-    convert["B"]=3.5;
-    convert["B-"]=3.0;
-    convert["C+"]=2.5;
-    convert["C"]=2.0;
-    convert["D+"]=1.5;
-    convert["D"]=1.0;
-    convert["F"]=0;
+    //Creates the FileSystemModel for the listview, the right file widget
+    listmodel=new QFileSystemModel(this);
+    listmodel->setRootPath(sPath);
+    ui->listView->setModel(listmodel);
 }
 
 //ANNOUNCEMENT UI
 
-//Loads the "modules" api to extract module information
+void DownloaderUI::poll()
+{
+QTimer *timer = new QTimer(this);
+QObject::connect(timer, SIGNAL(timeout()), this, SLOT(ModulesPageLoader()));
+timer->start(3600000); //time specified in ms to poll modulesPageLoader every 1 hour first
+
+}
 void DownloaderUI::ModulesPageLoader()
 {
     QString modules=QString("https://ivle.nus.edu.sg/api/Lapi.svc/Modules?APIKey=%1&AuthToken=%2&Duration=0&IncludeAllInfo=false").arg(APIKEY).arg(TOKEN);
@@ -133,7 +123,6 @@ void DownloaderUI::parse(bool)
             modulesmap[nested["CourseCode"].toString()]=nested["ID"].toString();//"ID" is the courseID, "CourseCode" is CourseName
     }
     //---------------ENDS HERE-----------------------------------
-
     storeintolist();
     announcementParsing();//this starts the announcement parsing
 
@@ -167,7 +156,6 @@ void DownloaderUI::announcementParsing()
 {
     cnt=0;
     continued();
-
 }
 
 //Parses announcement title and descption and strips HTML
@@ -269,7 +257,15 @@ void DownloaderUI::on_pushButton_clicked()
 }
 
 //CAP CALCULATOR UI
-
+//set Table headers and loads the mapping of grade to score
+void DownloaderUI::setTableHeaders()
+{
+    ui->tableWidget->setColumnCount(4);
+    QStringList headers;
+    headers<<"Module"<<"Credit Units"<<"Grade"<<"Current CAP";
+    ui->tableWidget->setHorizontalHeaderLabels(headers);
+    loadCAPscores();//loads the cap scores
+}
 //Press to add module and calculate CAP
 void DownloaderUI::on_pushButton_2_clicked()
 {
@@ -304,6 +300,20 @@ void DownloaderUI::on_pushButton_2_clicked()
 }
 
 //Clears the rows of CAP workings
+void DownloaderUI::loadCAPscores()
+{
+    convert["A+"]=5.0;
+    convert["A"]=5.0;
+    convert["A-"]=4.5;
+    convert["B+"]=4.0;
+    convert["B"]=3.5;
+    convert["B-"]=3.0;
+    convert["C+"]=2.5;
+    convert["C"]=2.0;
+    convert["D+"]=1.5;
+    convert["D"]=1.0;
+    convert["F"]=0;
+}
 void DownloaderUI::on_pushButton_3_clicked()
 {
     previousCAP=0;
@@ -312,8 +322,6 @@ void DownloaderUI::on_pushButton_3_clicked()
 }
 
 //For the To-Do-List UI
-
-
 void DownloaderUI::on_pushButton_4_clicked()
 {
     AddItem add;
