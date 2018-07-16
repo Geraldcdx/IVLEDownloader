@@ -1,7 +1,7 @@
 # IVLE Downloader - Offline IVLE
 
 ### This is an **application** that will be used by National University of Singapore(NUS) students to access files from the Integrated Virtual Learning Environment(IVLE).
-![Alt Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/download.png)
+![Alt Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/download.png)
 ### **Features of this IVLE Downloader include:**
 | No       | Feature      |Function  |
 |----------- |:-----------------------|:-----|
@@ -20,8 +20,9 @@
   4. Using a JSON parsing Library from https://github.com/qt-json/qt-json 
   
 ### Site Map
-* [User guide](https://github.com/Geraldcdx/IVLEDownloader/blob/master/Userguide.md) - Click here for a step-by-step guide to download the files
-* [Developers guide]() - Click here for Developers
+* [About Us](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/Aboutus.md)
+* [User guide](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/Userguide.md) - Click here for a step-by-step guide to download the files
+* [Developers guide](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/Developerguide.md) - Click here for Developers
 
 ### Acknowledgments
 * A prototype worked on was from https://github.com/yyjhao/IVLEDownloader . It had a few bugs that needed to be fixed in order to start downloading files from IVLE
