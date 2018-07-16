@@ -1,16 +1,16 @@
-# User guide:
-  ### 1. Introduction
-  ### 2. Quick Start
-  ### 3. Features:
-    * Files tab
-3.2  Announcements tab
-3.3  Exam Details tab
-FAQ
+# IVLE Downloader - User guide:
+  ## 1. Introduction
+  ## 2. Quick Start
+  ## 3. Features:
+* Files tab
+* Announcements tab
+* Exam Details tab
+## 4. FAQ
 
-1.Introduction
-The IVLE Downloader is the application that automatically downloads study material/announcements/exam details from the IVLE management system in National University of Singapore(NUS). This automation will remove the process of manually downloading files and hence saves a lot of time for students.
+### 1.Introduction
+The IVLE Downloader is the application that automatically downloads study material/announcements/exam details from the IVLE management system in National University of Singapore(NUS). This automation will remove the process of manually downloading files and hence saves a lot of time for you! Furthermore, you will be able to enjoy the addition features added into the application.
 
-2.Quick Start(This deployment is large because we have not cleaned up extra libraries yet)
+### 2.Quick Start(This deployment is large because we have not cleaned up extra libraries yet)
 -Download the IVLE Downloader from https://drive.google.com/drive/folders/1JQJRWs3FBgXUhdU5aG_9VGzSiQZ5ey1W?usp=sharing and extract the files:
 
 
@@ -20,7 +20,7 @@ The IVLE Downloader is the application that automatically downloads study materi
 
 -After downloading and running the IVLEDownloader file it should show you this:
 
-
+
 -This is a web browser that helps us extract a API key for you so that you will be able to retrieve information through IVLE for our code to help you extract all the important information by IVLE:
 
 
@@ -40,17 +40,17 @@ This should be seen:
 
 -You are done! Enjoy having your own offline IVLE at your fingertips! For this prototype, you would have to stop the application and re-run it again!(We are trying to iron out some bugs, right click on the bottom as seen and select quit to close the app):
 
-
-3.Features
-3.1  Files tab
+
+### 3.Features
+* Files tab
 Here you can access all your different files stored in neat folders:
 
-3.2  Announcements tab
+*  Announcements tab
 Here you can access all the different announcement information that you need for school(this should be done by milestone 3, now its empty):
 
 
 
-3.3  Exam Details tab
+* Exam Details tab
 Here is the place that keep track of all your important Midterm and Final Exams!(this should be done by milestone 3, now its empty):
 
-
+### 4. FAQ
