@@ -20,7 +20,7 @@
   4. Using a JSON parsing Library from https://github.com/qt-json/qt-json 
   
 ### Site Map
-* [User guide]() - Click here for a step-by-step guide to download the files
+* [User guide](https://github.com/Geraldcdx/IVLEDownloader/blob/master/Userguide.md) - Click here for a step-by-step guide to download the files
 * [Developers guide]() - Click here for Developers
 
 ### Acknowledgments
