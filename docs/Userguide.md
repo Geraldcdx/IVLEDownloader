@@ -1,4 +1,4 @@
-# User guide - IVLE Downloader:
+# IVLE Downloader - User guide:
   ## 1. Introduction
   ## 2. Quick Start
   ## 3. Features:
