@@ -31,7 +31,7 @@ The IVLE Downloader is the application that automatically downloads study materi
 ![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/normallogin.png)
 
 ##### This should be seen:
-![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/IVLElogin2.png)
+![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/normallogin2.png)
 
 ##### After you login, please specify a location that you want to store all the information that we will be downloading to:
 ![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/restart.png)
