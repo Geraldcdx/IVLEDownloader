@@ -1,7 +1,7 @@
-# User guide:
-  ### 1. Introduction
-  ### 2. Quick Start
-  ### 3. Features:
+= User guide:
+  :Introduction
+  :Quick Start
+  :Features:
     * Files tab
 3.2  Announcements tab
 3.3  Exam Details tab
