@@ -44,9 +44,10 @@
   * **DownloaderUI.ui** : Contains the UI information for all the mentioned tabs above. For a detailed view, visit [User Guide](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/Userguide.md).
  ## 2.3 Logic component
  Since this is written in C++ in OOP, there is always a .cpp file and .h file. If we want to create a UI, there will be a .ui file as well. Therefore, the way every .cpp,.h and .ui file is written to create a single class. In each class, different objects from different .h files can be called.
-  <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Main.png"></p>
-The following is the objects present in our MainWindow class
-   <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/MainO.png"></p>
+  <p><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Main.png"></p>
+The following is the objects present in our MainWindow class:
+   <p><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/MainO.png"></p>
+   
  ### DownloaderUI.ui
  ## 2.4 Model component
  
