@@ -55,7 +55,10 @@ The following is the objects present in our DownloaderUI class:
    <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/DownloaderUIO.png" width="700"></p>
    
  ## 2.4 Model component
- This is a self-developed project, therefore, we experiemented with different kinds of data storage methods to learn more about the Qt library and external programs. The table below shows the different ways that can store data in Qt:
+ Below is the exchanges between model and logic components to clarify the type of storage used in this application:
+ <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Model.png" width="700"></p>
+ 
+ This is a self-developed project, therefore, we experiemented with different kinds of data storage methods to learn more about the Qt library and external programs. The table below shows the different ways that can store data in Qt: 
  
  | No. | Method| Explanation |
 | --- |:---| :-----|
