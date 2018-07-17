@@ -12,7 +12,9 @@ The IVLE Downloader is the application that automatically downloads study materi
 
 ### 2.Quick Start(This deployment is large because we have not cleaned up extra libraries yet)
 ##### Download the IVLE Downloader from https://drive.google.com/drive/folders/1JQJRWs3FBgXUhdU5aG_9VGzSiQZ5ey1W?usp=sharing and extract the files:
-![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Deployment.png)
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Deployment.png"></p>
+
+
 
 ##### Click on the download button and save everything to a location easily accessed.
 ##### After downloading all the files, click on this file,IVLEDownloader:
@@ -25,16 +27,20 @@ The IVLE Downloader is the application that automatically downloads study materi
 ![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/IVLElogin.png)
 
 ##### After login in you will see this screen which generates an APIkey that i’ve erased out:
-![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/APIKEY.png)
+<p align="center"><img src="(https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/APIKEY.png" width="500"></p>
+
 
 ##### However, you still need to log in for us to generate a token for future authentication, so click on the login button:
 ![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/normallogin.png)
 
 ##### This should be seen:
+
 ![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/normallogin2.png)
 
+
 ##### After you login, please specify a location that you want to store all the information that we will be downloading to:
-![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/restart.png)
+
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/restart.png" width="600"></p>
 
 ##### You are done! Enjoy having your own offline IVLE at your fingertips! For this prototype, you would have to stop the application and re-run it again!(We are trying to iron out some bugs, right click on the bottom as seen and select quit to close the app):
 
