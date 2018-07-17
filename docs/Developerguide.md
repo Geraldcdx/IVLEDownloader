@@ -7,6 +7,16 @@
  * 2.2 UI component
  * 2.3 Logic component
  * 2.4 Model component
+## 3. Implementation:
+ * 3.1 User Interface(UI)
+ * 3.2 Files
+ * 3.3 Announcements
+ * 3.4 Exam Details
+ * 3.5 Time Table
+ * 3.6 CAP Calculator
+ * 3.7 To-Do-List
+## 4. Testing:
+ 
 
 ## 1. Setting Up:
 #### 1.1 Prerequisites:
@@ -66,4 +76,13 @@ The following is the objects present in our DownloaderUI class:
 | 2 | QSettings     | Qt has a library called QSettings. The QSettings class provides persistent platform-independent application setting|
 | 3 | SQLite DB     |  Qt has a library called QtSQL. This class allows users to create SQLite DB and store information there|
  
-
+## 3. Implementation:
+ * 3.1 User Interface(UI)
+ * 3.2 Files
+ * 3.3 Announcements
+ * 3.4 Exam Details
+ * 3.5 Time Table
+ * 3.6 CAP Calculator
+ * 3.7 To-Do-List
+ 
+## 4. Testing:
