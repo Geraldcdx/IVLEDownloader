@@ -31,11 +31,13 @@
   * After user has been granted access to IVLE through OAuth, a UI will pop-up to view all relevant information.
   * As the UI is created, the logic runs independently to retrieve data.
   * The logic can choose to pull data from the model or from the Internet and store it in the model and then retrieve information from the model.
-  * Below is a model that should clarify your understanding
+  * Below is a model that should clarify your understanding:
    <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Overview.png"></p>
    
  #### 2.2 UI component
+ <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/UI.png"></p>
+  
  #### 2.3 Logic component
  #### 2.4 Model component
- #### 2.5 Storage component
+ 
 
