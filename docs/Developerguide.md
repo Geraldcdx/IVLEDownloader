@@ -18,6 +18,8 @@
  * 3.8 To-Do-List
 
 ## 4. Testing:
+ * 4.1 Types of testing
+ * 4.2 Conclusion
  
 
 ## 1. Setting Up:
@@ -123,4 +125,11 @@ The following is the objects present in our DownloaderUI class:
  * Uses QtSQL to interact with SQLite to have a database to store to-do-list information.
  * When a user adds an item, the item will be stored on the database. When the user changes the slider value, it will update the database.
  
-## 4. Testing:
+## 4. Testing
+### 4.1 Types of testing:
+* Since it was done in the summer, there was no modules available. However, we requested help from professors to get CP2106 and CS2040 available to be used for testing.
+* Unit tests targeting the lowest level methods/classes and ensured that each class functioned properly.
+* Integration tests that are checking the integration of all code units and each class would work properly.
+* Hybrids of unit and integration tests. These test are checking multiple code units as well as how the are connected together. The GUI and code worked together to achieve the intended outcome that we set.
+### 4.2 Conclusion:
+The testing of the IVLE Downloader has been successful.
