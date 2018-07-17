@@ -8,13 +8,15 @@
  * 2.3 Logic component
  * 2.4 Model component
 ## 3. Implementation:
- * 3.1 User Interface(UI)
- * 3.2 Files
- * 3.3 Announcements
- * 3.4 Exam Details
- * 3.5 Time Table
- * 3.6 CAP Calculator
- * 3.7 To-Do-List
+ * 3.1 Login Implementation
+ * 3.2 User Interface(UI)
+ * 3.3 Files
+ * 3.4 Announcements
+ * 3.5 Exam Details
+ * 3.6 Time Table
+ * 3.7 CAP Calculator
+ * 3.8 To-Do-List
+
 ## 4. Testing:
  
 
@@ -77,12 +79,30 @@ The following is the objects present in our DownloaderUI class:
 | 3 | SQLite DB     |  Qt has a library called QtSQL. This class allows users to create SQLite DB and store information there|
  
 ## 3. Implementation:
- * 3.1 User Interface(UI)
- * 3.2 Files
- * 3.3 Announcements
- * 3.4 Exam Details
- * 3.5 Time Table
- * 3.6 CAP Calculator
- * 3.7 To-Do-List
+### 3.1 Login Implementation
+ * This code can be found in MainWindow.cpp.
+ * This login implementation is mainly about ensuring every user has a unique API key to poll using the IVLE API. A common issue for users who use an API is revoking of API keys/tokens. When a user polls too much from a server, higher than the poll limit that is set by administrators, it will revoke the API key/token and render the API key/token useless.
+ * A method of setting up first time users is necessary to ensure such a problem would not exist.
+ * From the [User Guide](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/Userguide.md) you will see the procedure of setting up.
+ * A QWebView is created to load the URL to log in to generate a API key unique to every user of IVLE. A custom parsing code using QWebView, QWebFrame and QWebElements will extract the API key and save it into QSettings. 
+ * When users log in, they poll from the API with their own API key.
+### 3.2 User Interface(UI)
+ * This code can be found in Downloader.cpp.
+ * The UI is created using QTabWidgets in the class DownloaderUI. Every tab is hardcoded to make a Files Tab, Announcements Tab, Exam Details Tab, TimeTable Tab, CAP Calculator Tab, To-Do-List Tab and NUSWhispers Tab.
+ * The NUSWhispers Tab uses QWebview to display a browser with a URL, this is found in DownloaderUI class.
+### 3.3 Files
+ * 80% of the code here was found in https://github.com/yyjhao/IVLEDownloader. Bugs fixed were addressing the API Key issue in 3.1 and increasing the frequency of polling from 5 minutes to 1 hour.
+ * Yu Jian implemented his own version of Promises in Promises.cpp similar to javascript. He then uses the promises throughout his code.
+ * ExternalPageParser.cpp is implemented to parse workbin files in IVLE.
+ * Settings.cpp is implemented to store setting by QSettings.
+ * SettingsDialog.cpp is implemented to have a UI to let the user see the settings changed. It also creates a AdvanceDialog object from advanceDialog.cpp. This object is to allows user to view updates of files.
+ * ExternalPageParser.cpp is implemented to parse pages.
+ * IVLEFetcher.cpp is implemented to poll from the IVLE api and obtain files using the ExternalPageParser object and promises to provide concurrent downloading of files.
+ ### 3.4 Announcements
+ ### 3.5 Exam Details
+ ### 3.6 Time Table
+ ### 3.7 CAP Calculator
+ ### 3.8 To-Do-List
+
  
 ## 4. Testing:
