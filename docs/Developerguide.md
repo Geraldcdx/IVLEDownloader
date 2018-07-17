@@ -87,22 +87,40 @@ The following is the objects present in our DownloaderUI class:
  * A QWebView is created to load the URL to log in to generate a API key unique to every user of IVLE. A custom parsing code using QWebView, QWebFrame and QWebElements will extract the API key and save it into QSettings. 
  * When users log in, they poll from the API with their own API key.
 ### 3.2 User Interface(UI)
- * This code can be found in Downloader.cpp.
+ * This code can be found in DownloaderUI.cpp.
  * The UI is created using QTabWidgets in the class DownloaderUI. Every tab is hardcoded to make a Files Tab, Announcements Tab, Exam Details Tab, TimeTable Tab, CAP Calculator Tab, To-Do-List Tab and NUSWhispers Tab.
  * The NUSWhispers Tab uses QWebview to display a browser with a URL, this is found in DownloaderUI class.
+ * Code to display Files Tab is made using QFileModelSystem and QTreeView.
 ### 3.3 Files
  * 80% of the code here was found in https://github.com/yyjhao/IVLEDownloader. Bugs fixed were addressing the API Key issue in 3.1 and increasing the frequency of polling from 5 minutes to 1 hour.
  * Yu Jian implemented his own version of Promises in Promises.cpp similar to javascript. He then uses the promises throughout his code.
  * ExternalPageParser.cpp is implemented to parse workbin files in IVLE.
  * Settings.cpp is implemented to store setting by QSettings.
  * SettingsDialog.cpp is implemented to have a UI to let the user see the settings changed. It also creates a AdvanceDialog object from advanceDialog.cpp. This object is to allows user to view updates of files.
- * ExternalPageParser.cpp is implemented to parse pages.
+ * ExternalPageParser.cpp is implemented to parse pages,
  * IVLEFetcher.cpp is implemented to poll from the IVLE api and obtain files using the ExternalPageParser object and promises to provide concurrent downloading of files.
  ### 3.4 Announcements
+ * Found in Announcements.cpp and called in DownloaderUI.cpp.
+ * Uses parsing with QWebview, QWebFrame, QWebElement, IVLE API and qtJSON to parse module ID, module name and announcements.
+ * Uses QDir to store announcements into a txt file.
+ * Uses QTabWidgets to create announcements based on the number of modules present.
  ### 3.5 Exam Details
+ * Found in Exam.cpp and called in DownloaderUI.cpp.
+ * Uses parsing with QWebview, QWebFrame, QWebElement, IVLE API and qtJSON to parse announcements using module ID stored in 3.4.
+ * Uses QTableWidget to make a custom number of tables based on number of modules.
  ### 3.6 Time Table
+ * Found in TimeTable.cpp and called in DownloaderUI.cpp.
+ * Uses QPixMap to display Time Table.
  ### 3.7 CAP Calculator
+ * Found in CAPCalculator.cpp called in DownloaderUI.cpp.
+ * Uses QDialog to create a dialog to allow user to input information in written in Dialog.cpp.
+ * Uses QTableWidget to display CAP by user.
+ * Custom code written to help students determine average score they need for future semesters.
  ### 3.8 To-Do-List
-
+ * Found in ToDoList.cpp called in DownloaderUI.cpp.
+ * Uses QDialog to allow users to input information written in addItem.cpp.
+ * Uses QWidget to custom create widgets written in Item.cpp.
+ * Uses QtSQL to interact with SQLite to have a database to store to-do-list information.
+ * When a user adds an item, the item will be stored on the database. When the user changes the slider value, it will update the database.
  
 ## 4. Testing:
