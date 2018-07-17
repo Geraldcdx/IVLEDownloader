@@ -16,12 +16,10 @@
  * 3.6 Time Table
  * 3.7 CAP Calculator
  * 3.8 To-Do-List
-
 ## 4. Testing:
  * 4.1 Types of testing
  * 4.2 Conclusion
- 
-
+## 5. Dev Ops
 ## 1. Setting Up:
 #### 1.1 Prerequisites:
   * First of all you have to download Qt Creator from https://www.qt.io/download. 
@@ -133,3 +131,6 @@ The following is the objects present in our DownloaderUI class:
 * Hybrids of unit and integration tests. These test are checking multiple code units as well as how the are connected together. The GUI and code worked together to achieve the intended outcome that we set.
 ### 4.2 Conclusion:
 The testing of the IVLE Downloader has been successful.
+
+## 5. Dev Ops
+### For making a release and ready for deployment
