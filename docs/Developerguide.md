@@ -36,7 +36,10 @@
    
  #### 2.2 UI component
  <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/UI.png"></p>
-  
+ 
+ ##### The two main UI components:
+  * **MainWindow.ui** : Sets up information such as API key, log in and directory to allow users to enjoy the full experience of the IVLE Downloader
+  * **DownloaderUI.ui** : Contains the UI information for all the mentioned tabs above. For a detailed view, visit [User Guide](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/Userguide.md).
  #### 2.3 Logic component
  #### 2.4 Model component
  
