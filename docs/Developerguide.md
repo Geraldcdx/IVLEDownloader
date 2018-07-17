@@ -49,6 +49,18 @@ The following is the objects present in our MainWindow class:
    <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/MainO.png" width="700"></p>
    
  ### DownloaderUI.ui
+This is the UI whereby files, announcements, exam details, timetable, CAPCalculator, to-do-list and NUSWhispers can be seen.
+   <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/DownloaderUI.png" width="700"></p>
+The following is the objects present in our DownloaderUI class:
+   <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/DownloaderUIO.png" width="700"></p>
+   
  ## 2.4 Model component
+ This is a self-developed project, therefore, we experiemented with different kinds of data storage methods to learn more about the Qt library and external programs. The table below shows the different ways that can store data in Qt:
+ 
+ | No. | Method| Explanation |
+| --- |:---| :-----|
+| 1 | Text File |Qt has a library called QDir and this library enables Qt applications to read/write from/to .txt files|
+| 2 | QSettings     | Qt has a library called QSettings. The QSettings class provides persistent platform-independent application setting|
+| 3 | SQLite DB     |  Qt has a library called QtSQL. This class allows users to create SQLite DB and store information there|
  
 
