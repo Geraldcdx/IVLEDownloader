@@ -18,10 +18,11 @@
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/projectc.png" width="250"></p>
 
 ## 2. Design:
- #### 2.1 Architecture
+ ### *The **Architecture Diagram** given below explains the high-level design of the App. Given below is a quick overview of each component.*
+ ## 2.1 Architecture
  <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Archi.png"></p>
  
- ### The **Architecture Diagram** given above explains the high-level design of the App. Given below is a quick overview of each component.
+
  ### When the app is executed, the first time users will be called to extract their APIKey and login. Users that has logged in and done set-up procedures will be brought into a UI.
  ### The 3 components of the application that follow the Model View Controller(MVC) model are:
   * **Logic** - This is the code that allows everything to function. It acts as a controller.
@@ -31,11 +32,18 @@
   * After user has been granted access to IVLE through OAuth, a UI will pop-up to view all relevant information.
   * As the UI is created, the logic runs independently to retrieve data.
   * The logic can choose to pull data from the model or from the Internet and store it in the model and then retrieve information from the model.
-  * Below is a model that should clarify your understanding
+  * Below is a model that should clarify your understanding:
    <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Overview.png"></p>
    
- #### 2.2 UI component
- #### 2.3 Logic component
- #### 2.4 Model component
- #### 2.5 Storage component
+ ## 2.2 UI component
+ ### *The UI components work hand in hand with the logic component to get relevant information to display on the UI to allow users to view all offline IVLE information.*
+ <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/UI.png"></p>
+ 
+ ### The two main UI components:
+  * **MainWindow.ui** : Sets up information such as API key, log in and directory to allow users to enjoy the full experience of the IVLE Downloader
+  * **DownloaderUI.ui** : Contains the UI information for all the mentioned tabs above. For a detailed view, visit [User Guide](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/Userguide.md).
+
+ ## 2.3 Logic component
+ ## 2.4 Model component
+ 
 
