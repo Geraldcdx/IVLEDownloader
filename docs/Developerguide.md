@@ -59,7 +59,7 @@ The following is the objects present in our DownloaderUI class:
  
  | No. | Method| Explanation |
 | --- |:---| :-----|
-| 1 | Text File |Qt has a library called QDir and this library enables Qt applications to read/write from/to .txt files|
+| 1 | Local Directory |Qt has a library called QDir and this library enables Qt applications to read/write from/to local files|
 | 2 | QSettings     | Qt has a library called QSettings. The QSettings class provides persistent platform-independent application setting|
 | 3 | SQLite DB     |  Qt has a library called QtSQL. This class allows users to create SQLite DB and store information there|
  
