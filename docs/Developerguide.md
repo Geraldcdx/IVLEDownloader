@@ -20,7 +20,7 @@
 ## 2. Design:
  ### *The **Architecture Diagram** given below explains the high-level design of the App. Given below is a quick overview of each component.*
  ## 2.1 Architecture
- <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Archi.png"></p>
+ <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Archi.png" width="500"></p>
  
 
  ### When the app is executed, the first time users will be called to extract their APIKey and login. Users that has logged in and done set-up procedures will be brought into a UI.
@@ -33,20 +33,20 @@
   * As the UI is created, the logic runs independently to retrieve data.
   * The logic can choose to pull data from the model or from the Internet and store it in the model and then retrieve information from the model.
   * Below is a model that should clarify your understanding:
-   <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Overview.png"></p>
+   <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Overview.png"width="700"></p>
    
  ## 2.2 UI component
  ### *The UI components work hand in hand with the logic component to get relevant information to display on the UI to allow users to view all offline IVLE information.*
- <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/UI.png"></p>
+ <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/UI.png" width="700"></p>
  
  ### The two main UI components:
   * **MainWindow.ui** : Sets up information such as API key, log in and directory to allow users to enjoy the full experience of the IVLE Downloader. This also provides a settings function that can be seen as a running application at the icons running.
   * **DownloaderUI.ui** : Contains the UI information for all the mentioned tabs above. For a detailed view, visit [User Guide](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/Userguide.md).
  ## 2.3 Logic component
  Since this is written in C++ in OOP, there is always a .cpp file and .h file. If we want to create a UI, there will be a .ui file as well. Therefore, the way every .cpp,.h and .ui file is written to create a single class. In each class, different objects from different .h files can be called.
-  <p><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Main.png"></p>
+  <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Main.png" width="700"></p>
 The following is the objects present in our MainWindow class:
-   <p><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/MainO.png"></p>
+   <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/MainO.png" width="700"></p>
    
  ### DownloaderUI.ui
  ## 2.4 Model component
