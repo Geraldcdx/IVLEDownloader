@@ -22,7 +22,8 @@
 
 ## 2. Design:
  #### 2.1 Architecture
- ![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Archi.png)
+ <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Archi.png"></p>
+ 
  ##### The **Architecture Diagram** given above explains the high-level design of the App. Given below is a quick overview of each component.
  ##### When the app is executed, the first time users will be called to extract their APIKey and login. Users that has logged in and done set-up procedures will be brought into a UI.
  ##### The 3 components of the application that follow the Model View Controller(MVC) model are:
