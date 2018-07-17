@@ -18,7 +18,7 @@
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/projectc.png" width="250"></p>
 
 ## 2. Design:
- #### 2.1 Architecture
+ ## 2.1 Architecture
  <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Archi.png"></p>
  
  ### The **Architecture Diagram** given above explains the high-level design of the App. Given below is a quick overview of each component.
@@ -34,13 +34,13 @@
   * Below is a model that should clarify your understanding:
    <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Overview.png"></p>
    
- #### 2.2 UI component
+ ## 2.2 UI component
  <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/UI.png"></p>
  
- ##### The two main UI components:
+ ### The two main UI components:
   * **MainWindow.ui** : Sets up information such as API key, log in and directory to allow users to enjoy the full experience of the IVLE Downloader
   * **DownloaderUI.ui** : Contains the UI information for all the mentioned tabs above. For a detailed view, visit [User Guide](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/Userguide.md).
- #### 2.3 Logic component
- #### 2.4 Model component
+ ## 2.3 Logic component
+ ## 2.4 Model component
  
 
