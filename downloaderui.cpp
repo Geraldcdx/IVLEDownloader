@@ -37,13 +37,12 @@ DownloaderUI::DownloaderUI(QWidget *parent) :
     ui(new Ui::DownloaderUI)
 {
     ui->setupUi(this);
-
+    setupFiles(DIRECTORY);//FILES TAB //change directory to make it your own path
     //Datebase creation
     QString DB=DIRECTORY;
     DB.append("/db.sqlite");
     makeDB(DB);//makes the Database based on path DB
-    pull();//draws out all information for to-do-list
-    setupFiles(DIRECTORY);//FILES TAB //change directory to make it your own path
+    pull();//draws out all information for to-do-list 
     setExamTable();//Sets exams tabs information
     //ANNOUNCEMENT UI
     connect(innerPage, SIGNAL(loadFinished(bool)), SLOT(parse(bool)));//connects with modules code and ID parsing
@@ -77,7 +76,6 @@ void DownloaderUI::setupFiles(QString sPath)
     ui->treeView->setModel(this->dirmodel);
     dirmodel->setRootPath(sPath);
     ui->treeView->setRootIndex(dirmodel->index(sPath));
-
     //Creates the FileSystemModel for the listview, the right file widget
     listmodel=new QFileSystemModel(this);
     listmodel->setRootPath(sPath);
@@ -91,7 +89,6 @@ void DownloaderUI::poll()
 QTimer *timer = new QTimer(this);
 QObject::connect(timer, SIGNAL(timeout()), this, SLOT(ModulesPageLoader()));
 timer->start(3600000); //time specified in ms to poll modulesPageLoader every 1 hour first
-
 }
 
 void DownloaderUI::ModulesPageLoader()

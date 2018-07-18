@@ -147,13 +147,13 @@ MainWindow::MainWindow(QWidget *parent) :
     if (GetMyValue("KEY","NULL").toString().length()!=21){
         ivleLoginPage();
         getAPIkey();
-        qDebug()<<GetMyValue("KEY","Does not exist");
+        //qDebug()<<GetMyValue("KEY","Does not exist");
         QString keys=GetMyValue("KEY","h").toString();
-        qDebug()<<keys;
-        DownloaderUI UI;
-        UI.setWindowFlags(Qt::Window);
-        UI.setModal(true);
-        UI.exec();
+        //qDebug()<<keys;
+//        DownloaderUI UI;
+//        UI.setWindowFlags(Qt::Window);
+//        UI.setModal(true);
+//        UI.exec();
 
     } else {
         QString keys=GetMyValue("KEY","h").toString();
@@ -177,7 +177,6 @@ void MainWindow::ivleLoginPage()
 
     webView->setUrl(QString("https://ivle.nus.edu.sg/LAPI/default.aspx").arg("EaLNhIs72xzNhdl9ai6Tr"));
     webviewDialog->show();
-
 }
 
 // Navigates to the page that creates an APIKEY based on each user

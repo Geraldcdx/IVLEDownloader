@@ -2,6 +2,13 @@
 #include "ui_settingsdialog.h"
 #include <QDebug>
 #include "globalvar.h"
+#include "downloaderui.h"
+#include "mainwindow.h"
+#include <QWebView>
+#include <QWebElement>
+#include <QWebFrame>
+#include <QUrl>
+#include <QSettings>
 
 SettingsDialog::SettingsDialog(QWidget *parent) :
     QDialog(parent),
@@ -17,7 +24,6 @@ SettingsDialog::SettingsDialog(QWidget *parent) :
     webviewDialog->layout()->addWidget(webView);
     webviewDialog->layout()->setMargin(0);
     connect(webView, SIGNAL(loadFinished(bool)), this, SLOT(onWebviewLoaded()));
-
 
     adialog = new AdvancedDialog(this);
     connect(adialog, &AdvancedDialog::configSaved, this, &SettingsDialog::configSaved);
@@ -96,4 +102,48 @@ void SettingsDialog::closeEvent(QCloseEvent *e){
 void SettingsDialog::on_pushButton_3_clicked()
 {
     adialog->show();
+}
+
+void SettingsDialog::on_pushButton_4_clicked()
+{
+    DownloaderUI UI;
+    this->close();
+    UI.setWindowFlags(Qt::Window);
+    UI.setModal(true);
+    UI.exec();
+    this->show();
+    //getAPIkey();
+}
+
+void SettingsDialog::on_pushButton_5_clicked()
+{
+    webviewDialog2 = new QDialog(this);// an object that is shown in the UI, code below will set the settings of the Dialog box seen
+    webviewDialog2->setLayout(new QBoxLayout(QBoxLayout::LeftToRight));
+    webviewDialog2->setAttribute(Qt::WA_QuitOnClose,false);
+    webView2 = new QWebView(webviewDialog2);
+    webviewDialog2->layout()->addWidget(webView2);
+    webviewDialog2->layout()->setMargin(0);
+    webView2->setUrl(QString("https://ivle.nus.edu.sg/LAPI/default.aspx"));
+    webviewDialog2->show();
+    getAPIkey();
+}
+void SettingsDialog::getAPIkey()
+{
+    QUrl url("https://ivle.nus.edu.sg/LAPI/default.aspx");//url to obtain the APIKEY
+    webView2->setUrl(url);
+    //Signals and slot function that ensures that the webpage is loaded finish before executing the parse function
+    connect(webView2, SIGNAL(loadFinished(bool)), SLOT(parse(bool)));
+}
+
+//Parsing function that uses QSettings,QWebView,QWebFrame and QWebElement to extract the APIKEY from parsing HTML code on the webpage that generates the APIKEY
+void SettingsDialog::parse(bool){
+    QWebFrame *frameInner = webView2->page()->mainFrame();
+    QWebElement doc = frameInner->documentElement();
+    QWebElement key = doc.findFirst("b");//function to find the first element in the HTML tag <b>
+    APIKEY = key.toPlainText();
+    //qDebug()<<APIKEY;
+    QSettings* regSett;
+    regSett = new QSettings("Organization-name","Project-name");
+    regSett->setValue("KEY",APIKEY); //Store value of key defined by user
+    //qDebug()<<regSett->value("KEY","does not exist");
 }

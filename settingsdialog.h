@@ -31,6 +31,8 @@ public slots:
     void setDlText(const QString&);
     void setDisplayedSettings(QVariantMap);
 
+
+
 protected:
     void closeEvent(QCloseEvent *);
     bool event(QEvent *e);
@@ -44,6 +46,12 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+    void on_pushButton_4_clicked();
+
+    void on_pushButton_5_clicked();
+    void getAPIkey();
+       void parse(bool);
+
 signals:
     void gottenToken(QString);
     void updateDirectory(QString);
@@ -52,9 +60,11 @@ signals:
 
 private:
     Ui::SettingsDialog *ui;
-    QWebView* webView;
+    QWebView* webView,* webView3;
     QDialog* webviewDialog;
     AdvancedDialog* adialog;
+    QWebView* webView2;
+    QDialog* webviewDialog2;
 };
 
 #endif // SETTINGSDIALOG_H
