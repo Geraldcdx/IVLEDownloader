@@ -38,35 +38,42 @@ DownloaderUI::DownloaderUI(QWidget *parent) :
 {
     ui->setupUi(this);
     setupFiles(DIRECTORY);//FILES TAB //change directory to make it your own path
-    //Datebase creation
-    QString DB=DIRECTORY;
-    DB.append("/db.sqlite");
-    makeDB(DB);//makes the Database based on path DB
-    pull();//draws out all information for to-do-list 
+    initDB();//Datebase creation & to-do-list implementation
+    initParser();//ANNOUNCEMENT UI && Exams parsing UI
+    ui->webView->load(QUrl("https://www.nuswhispers.com/home/")); //Add NUSWhispers
+    setTableHeaders();//Adding CAP calculator
+    initTT();//Add Timetable
+}
+void DownloaderUI::initParser()
+{
     setExamTable();//Sets exams tabs information
-    //ANNOUNCEMENT UI
     connect(innerPage, SIGNAL(loadFinished(bool)), SLOT(parse(bool)));//connects with modules code and ID parsing
-    connect(innerPage2, SIGNAL(loadFinished(bool)), SLOT(parse2(bool)));//connects with announcement parsing 
+    connect(innerPage2, SIGNAL(loadFinished(bool)), SLOT(parse2(bool)));//connects with announcement parsing
     connect(innerPage3, SIGNAL(loadFinished(bool)), SLOT(parse3(bool)));//connects with exam details parsing
     removeTabs();//removes all the default tabs
     ModulesPageLoader();//Load announcement modules pages
     poll(); //Timer to poll every 1 hour
-    ui->webView->load(QUrl("https://www.nuswhispers.com/home/")); //Add NUSWhispers
-    setTableHeaders();//Adding CAP calculator
-    //Add Timetable
-    QString dir=DIRECTORY;
-    dir.append("/My Timetable.png");
-    QPixmap pic(dir);
-    ui->label->setPixmap(pic.scaled(1000,450,Qt::KeepAspectRatio,Qt::SmoothTransformation));
+}
+//Time table init
+void DownloaderUI::initTT()
+{
+        QString dir=DIRECTORY;
+        dir.append("/My Timetable.png");
+        QPixmap pic(dir);
+        ui->label->setPixmap(pic.scaled(1000,450,Qt::KeepAspectRatio,Qt::SmoothTransformation));
 }
 //Preprocessing that clears default tabs
 void DownloaderUI::removeTabs()
 {
+    qDebug()<<ui->tabWidget_2->count();
     ui->tabWidget_2->setCurrentIndex(0);
     ui->tabWidget_2->removeTab(2);
     ui->tabWidget_2->removeTab(1);
     ui->tabWidget_2->removeTab(0);
+    qDebug()<<"Test here";
+    qDebug()<<ui->tabWidget_2->count();
 }
+
 //FILES UI
 void DownloaderUI::setupFiles(QString sPath)
 {
@@ -80,6 +87,24 @@ void DownloaderUI::setupFiles(QString sPath)
     listmodel=new QFileSystemModel(this);
     listmodel->setRootPath(sPath);
     ui->listView->setModel(listmodel);
+}
+
+//For the folder view on the left
+void DownloaderUI::on_treeView_clicked(const QModelIndex &index)
+{
+    QString sPath=dirmodel->fileInfo(index).absoluteFilePath();
+    ui->listView->setRootIndex(listmodel->setRootPath(sPath));
+}
+//For the documents view on the right
+void DownloaderUI::on_listView_clicked(const QModelIndex &index)
+{
+    QString sPath=listmodel->fileInfo(index).absoluteFilePath();
+    QDesktopServices::openUrl(QUrl::fromLocalFile(sPath));
+}
+
+DownloaderUI::~DownloaderUI()
+{
+    delete ui;
 }
 
 //ANNOUNCEMENT UI
@@ -242,26 +267,6 @@ void DownloaderUI::addModulesTabs()
                 file.close();
         text->settingofText(line);
     }
-}
-
-//DOWNLOADED FILES UI
-
-//For the folder view on the left
-void DownloaderUI::on_treeView_clicked(const QModelIndex &index)
-{
-    QString sPath=dirmodel->fileInfo(index).absoluteFilePath();
-    ui->listView->setRootIndex(listmodel->setRootPath(sPath));
-}
-//For the documents view on the right
-void DownloaderUI::on_listView_clicked(const QModelIndex &index)
-{
-    QString sPath=listmodel->fileInfo(index).absoluteFilePath();
-    QDesktopServices::openUrl(QUrl::fromLocalFile(sPath));
-}
-
-DownloaderUI::~DownloaderUI()
-{
-    delete ui;
 }
 
 //Exam Details UI
@@ -428,6 +433,15 @@ void DownloaderUI::on_pushButton_5_clicked()
 }
 //For the To-Do-List UI
 
+//function to intialise the to-do-list
+void DownloaderUI::initDB()
+{
+    QString DB=DIRECTORY;
+    DB.append("/db.sqlite");
+    makeDB(DB);//makes the Database based on path DB
+    pull();//draws out all information for to-do-list
+
+}
 //Makes new items
 void DownloaderUI::on_pushButton_4_clicked()
 {

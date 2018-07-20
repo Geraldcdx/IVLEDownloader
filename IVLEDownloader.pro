@@ -39,7 +39,8 @@ SOURCES += main.cpp\
     form.cpp \
     dialog.cpp \
     additem.cpp \
-    item.cpp
+    item.cpp \
+    parsing.cpp
 
 HEADERS  += mainwindow.h \
     settingsdialog.h \
@@ -59,7 +60,8 @@ HEADERS  += mainwindow.h \
     form.h \
     dialog.h \
     additem.h \
-    item.h
+    item.h \
+    parsing.h
 
 FORMS    += mainwindow.ui \
     settingsdialog.ui \

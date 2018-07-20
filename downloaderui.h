@@ -24,6 +24,9 @@ class DownloaderUI : public QDialog
 
 public:
     explicit DownloaderUI(QWidget *parent = 0);
+    void initDB();
+    void initTT();
+    void initParser();
     void storeintolist();
     void continued();
     void continued2();
