@@ -423,11 +423,11 @@ void DownloaderUI::on_pushButton_5_clicked()
     float pass=(2.0*160-current)/unitsleft;
     QString string;
     string.append("The numbers reflected are the minimum average grade you need for the remaining modular credits units towards 160mcs:\n\n");
-    string.append("To get 1st Class Honours(CPA=4.5) you need "+QString::number(firstclass)+"\n\n");
-    string.append("To get 2nd Upper Class Honours(CPA=4.0) you need "+QString::number(secondclass)+"\n\n");
-    string.append("To get 2nd Lower Class Honours(CPA=3.5) you need "+QString::number(secondlower)+"\n\n");
-    string.append("To get 3rd Class Honours(CPA=3.0) you need "+QString::number(thirdclass)+"\n\n");
-    string.append("To get pass(CPA=2.0) you need "+QString::number(pass)+"\n\n");
+    string.append("To get 1st Class Honours(CAP=4.5) you need "+QString::number(firstclass)+"\n\n");
+    string.append("To get 2nd Upper Class Honours(CAP=4.0) you need "+QString::number(secondclass)+"\n\n");
+    string.append("To get 2nd Lower Class Honours(CAP=3.5) you need "+QString::number(secondlower)+"\n\n");
+    string.append("To get 3rd Class Honours(CAP=3.0) you need "+QString::number(thirdclass)+"\n\n");
+    string.append("To get pass(CAP=2.0) you need "+QString::number(pass)+"\n\n");
     string.append("JiaYou and all the Best");
     QMessageBox::information(this,"CAP Goals",string);
 }
@@ -443,7 +443,7 @@ void DownloaderUI::initDB()
 
 }
 //Makes new items
-void DownloaderUI::on_pushButton_4_clicked()
+void DownloaderUI::on_pushButton_6_clicked()
 {
     AddItem add;
     int outcome;
@@ -457,7 +457,7 @@ void DownloaderUI::on_pushButton_4_clicked()
     i->setText(item);
     i->setProgress(0);
     connect(i,SIGNAL(changeVal(QString,int)),this,SLOT(update(QString,int)));
-    ui->verticalLayout_12->addWidget(i);
+    ui->verticalLayout_6->addWidget(i);
     addvalues(item,0);
 }
 //Add values to the DB
@@ -514,7 +514,7 @@ void DownloaderUI::pull()
             i->setText(record.value("Item").toString());
             i->setProgress(record.value("Progress").toInt());
             connect(i,SIGNAL(changeVal(QString,int)),this,SLOT(update(QString,int)));
-            ui->verticalLayout_12->addWidget(i);
+            ui->verticalLayout_6->addWidget(i);
         }
     db.close();
 }
@@ -531,5 +531,4 @@ void DownloaderUI::makeDB(QString path)
     if(!qry.exec(query)) qDebug()<<"Query failed or Database already created";
     db.close();
 }
-
 
