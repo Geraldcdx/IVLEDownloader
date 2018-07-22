@@ -42,7 +42,8 @@ DownloaderUI::DownloaderUI(QWidget *parent) :
     initParser();//ANNOUNCEMENT UI && Exams parsing UI
     ui->webView->load(QUrl("https://www.nuswhispers.com/home/")); //Add NUSWhispers
     setTableHeaders();//Adding CAP calculator
-    initTT();//Add Timetable
+    startOutlook();
+
 }
 void DownloaderUI::initParser()
 {
@@ -54,14 +55,7 @@ void DownloaderUI::initParser()
     ModulesPageLoader();//Load announcement modules pages
     poll(); //Timer to poll every 1 hour
 }
-//Time table init
-void DownloaderUI::initTT()
-{
-        QString dir=DIRECTORY;
-        dir.append("/My Timetable.png");
-        QPixmap pic(dir);
-        ui->label->setPixmap(pic.scaled(1000,450,Qt::KeepAspectRatio,Qt::SmoothTransformation));
-}
+
 //Preprocessing that clears default tabs
 void DownloaderUI::removeTabs()
 {
@@ -332,11 +326,6 @@ void DownloaderUI::parse3(bool)
 
 }
 
-void DownloaderUI::on_pushButton_clicked()
-{
-    QDesktopServices::openUrl(QUrl("https://nusmods.com/timetable/sem-1"));
-}
-
 //CAP CALCULATOR UI
 //set Table headers and loads the mapping of grade to score
 void DownloaderUI::setTableHeaders()
@@ -531,4 +520,85 @@ void DownloaderUI::makeDB(QString path)
     if(!qry.exec(query)) qDebug()<<"Query failed or Database already created";
     db.close();
 }
+
+
+//Outlook
+//Opens QSettings and check if username and password exists
+void DownloaderUI::startOutlook(){
+
+    //Opens QSettings, default username and password set to null
+    QSettings settings ("IVLE", "App");
+    settings.beginGroup("userinfo");
+    QString tempUsername= settings.value("tempUsername","null").toString();
+    QString tempPassword = settings.value("tempPassword", "null").toString();
+    settings.endGroup();
+
+    //If Qsettings is null, group box will show for user to key in details
+    if(tempUsername=="null"){
+        ui->webView_2->load(QUrl("https://outlook.office.com/owa/?realm=u.nus.edu"));
+        ui->webView_2->hide();
+
+        connect(this,SIGNAL(login()),this,SLOT(loadOutlook()));
+    //If Qsettings was saved before, outlook will load user details and login
+    } else {
+        ui->groupBox->hide();
+        ui->webView_2->load(QUrl("https://outlook.office.com/owa/?realm=u.nus.edu"));
+        connect(ui->webView_2, SIGNAL(loadFinished(bool)), this, SLOT(loadOutlook()));
+    }
+
+}
+
+//Saves user details into Qsettings and load outlook
+void DownloaderUI::on_pushButton_login_clicked()
+{
+    //Saves line edit username and password into Qsettings and sends out login signal to load Outlook
+    QSettings settings ("IVLE", "App");
+    settings.beginGroup("userinfo");
+    settings.setValue("tempUsername", ui->lineEdit_username->text());
+    settings.setValue("tempPassword", ui->lineEdit_password->text());
+    settings.endGroup();
+    qDebug()<< "temp details saved";
+    startOutlook();
+    emit login();
+
+}
+
+//Inputs Qsettings username and password into outlook url placeholders and login
+void DownloaderUI:: loadOutlook(){
+
+    ui->webView_2->show();
+    ui->groupBox->hide();
+    //calls qsettings
+    QSettings settings ("IVLE", "App");
+    settings.beginGroup("userinfo");
+    QString tempUsername= settings.value("tempUsername","null").toString();
+    QString tempPassword = settings.value("tempPassword", "null").toString();
+    settings.endGroup();
+
+    //inserts username and password into webview
+    ui->webView_2->page()->mainFrame()->evaluateJavaScript(QString("document.getElementById('ContentPlaceHolder1_UsernameTextBox').value = '%1'").arg(tempUsername));
+    ui->webView_2->page()->mainFrame()->evaluateJavaScript(QString("document.getElementById('ContentPlaceHolder1_PasswordTextBox').value = '%1'").arg(tempPassword));
+    ui->webView_2->page()->mainFrame()->evaluateJavaScript(QString("document.getElementById('ContentPlaceHolder1_SubmitButton').click()"));
+
+    disconnect(ui->webView_2, SIGNAL(loadFinished(bool)), this, SLOT(loadOutlook()));
+    disconnect(ui->webView_2, SIGNAL(login()), this, SLOT(loadOutlook()));
+}
+
+//Function resets username and password to null, allowing the user to log in from fresh
+void DownloaderUI::on_pushButton_forgetMe_clicked()
+{
+    QSettings settings ("IVLE", "App");
+    settings.beginGroup("userinfo");
+    settings.setValue("tempUsername", "null");
+    settings.setValue("tempPassword", "null");
+    settings.endGroup();
+    qDebug()<< "forgotten";
+    ui->webView_2->hide();
+    ui->groupBox->show();
+
+}
+
+
+
+
 
