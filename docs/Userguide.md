@@ -34,8 +34,15 @@ The IVLE Downloader is the application that automatically downloads study materi
 ##### This should be seen:
 ![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/normallogin2.png)
 
-Click on
-##### You are done! Enjoy having your own offline IVLE at your fingertips! For this prototype, you would have to stop the application and re-run it again!(We are trying to iron out some bugs, right click on the bottom as seen and select quit to close the app):
+### View the settings at the bottom right hand corner of your screen:
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/findsettings.png" width="500"></p>
+
+### Click on the IVLE Downloader to start:
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/settings.png" width="500"></p>
+
+### If you encounter any errors like this, just go to any corner of the window and stretch it out:
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/error.png" width="500"></p>
+
 
 
 ### 3.Features
