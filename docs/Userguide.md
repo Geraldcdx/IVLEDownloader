@@ -44,11 +44,11 @@ The IVLE Downloader is the application that automatically downloads study materi
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/error.png" width="300"></p>
 
 ## 3.Features
-* Files tab
+* Files Tab
 <br>**Here you can access all your different files stored in neat folders, click the right tab to open:**
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/filestab.png" width="800"></p>
 
-*  Announcements tab: <br>
+*  Announcements Tab: <br>
 **Here you can access all the different announcement information that you need for school:**
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/announcementtab.png" width="800"></p>
 
