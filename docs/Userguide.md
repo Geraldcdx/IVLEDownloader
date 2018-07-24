@@ -53,7 +53,7 @@ Here you can access all the different announcement information that you need for
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/announcementtab.png" width="700"></p>
 
 * Exams and to-do-list Tab:
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Exam.png" width="700"></p>
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Exams.png" width="700"></p>
 
 * Outlook Tab:
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Outlook.png" width="700"></p>
