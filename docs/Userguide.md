@@ -46,23 +46,26 @@ The IVLE Downloader is the application that automatically downloads study materi
 ## 3.Features
 * Files tab
 Here you can access all your different files stored in neat folders, click the right tab to open:
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/filestab.png" width="700"></p>
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/filestab.png" width="800"></p>
 
-*  Announcements tab
+*  Announcements tab: <br>
 Here you can access all the different announcement information that you need for school:
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/announcementtab.png" width="700"></p>
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/announcementtab.png" width="800"></p>
 
-* Exams and to-do-list Tab:
-#### Click add item to add more to-do-list items! They can only be completed when it reaches 100%
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Exams.png" width="700"></p>
+* Exams and to-do-list Tab:<br>
+Click add item to add more to-do-list items! They can only be completed when it reaches 100%!
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Exams.png" width="800"></p>
 
-* Outlook Tab:
-#### Log in to outlook!
-#### You can also add your NUSMod calendar and use it as your calendar as well!
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Outlook.png" width="700"></p>
+* CAP calculator Tab:<br>
+Add your grades and you can click on CAP goals to estimate the CAP you need to graduate with!
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/captab.png" width="800"></p>
+
+* Outlook Tab:<br>
+ Log in to outlook!You can also add your NUSMod calendar and use it as your calendar as well!
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Outlook.png" width="800"></p>
 
 * NUSWhisper's Tab:
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/nuswtab.png" width="700"></p>
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/nuswtab.png" width="800"></p>
 
 
 
