@@ -45,17 +45,20 @@ The IVLE Downloader is the application that automatically downloads study materi
 
 ## 3.Features
 * Files tab
-Here you can access all your different files stored in neat folders:
+Here you can access all your different files stored in neat folders, click the right tab to open:
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/filestab.png" width="700"></p>
 
 *  Announcements tab
-Here you can access all the different announcement information that you need for school(this should be done by milestone 3, now its empty):
+Here you can access all the different announcement information that you need for school:
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/announcementtab.png" width="700"></p>
 
 * Exams and to-do-list Tab:
+#### Click add item to add more to-do-list items! They can only be completed when it reaches 100%
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Exams.png" width="700"></p>
 
 * Outlook Tab:
+#### Log in to outlook!
+#### You can also add your NUSMod calendar and use it as your calendar as well!
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Outlook.png" width="700"></p>
 
 * NUSWhisper's Tab:
