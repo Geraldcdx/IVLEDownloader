@@ -28,18 +28,13 @@ The IVLE Downloader is the application that automatically downloads study materi
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/APIKEY.png" width="500"></p>
 
 
-##### However, you still need to log in for us to generate a token for future authentication, so click on the login button:
+##### However, you still need to log in for us to generate a token for future authentication. **However, click yellow part to change directory first** and then red part to log in so the application will know how to store your files:
 ![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/normallogin.png)
 
 ##### This should be seen:
-
 ![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/normallogin2.png)
 
-
-##### After you login, please specify a location that you want to store all the information that we will be downloading to:
-
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/restart.png" width="600"></p>
-
+Click on
 ##### You are done! Enjoy having your own offline IVLE at your fingertips! For this prototype, you would have to stop the application and re-run it again!(We are trying to iron out some bugs, right click on the bottom as seen and select quit to close the app):
 
 
