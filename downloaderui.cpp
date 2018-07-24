@@ -1,8 +1,5 @@
 //Created by Gerald Chua Deng Xiang
-//Potential improvements
-//1)Can maybe just parse modulecode and ID once only and not always?? QSettings or external text file
-//2)Find out a method to compare previous files and changes in them? But, doesn't sound feasible but does save computing power
-//but not on polling rate
+
 
 #include "downloaderui.h"
 #include "ui_downloaderui.h"
@@ -31,6 +28,7 @@
 #include <QPushButton>
 #include <QSqlDatabase>
 #include <QMessageBox>
+#include <QWebHistory>
 
 DownloaderUI::DownloaderUI(QWidget *parent) :
     QDialog(parent),
@@ -591,9 +589,11 @@ void DownloaderUI::on_pushButton_forgetMe_clicked()
     settings.beginGroup("userinfo");
     settings.setValue("tempUsername", "null");
     settings.setValue("tempPassword", "null");
-    settings.endGroup();
-    qDebug()<< "forgotten";
+    //settings.endGroup();
+    qDebug()<<settings.value("tempUsername","exist");
+
     ui->webView_2->hide();
+//delete and recreate object
     ui->groupBox->show();
 
 }

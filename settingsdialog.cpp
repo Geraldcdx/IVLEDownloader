@@ -106,13 +106,19 @@ void SettingsDialog::on_pushButton_3_clicked()
 
 void SettingsDialog::on_pushButton_4_clicked()
 {
+    QSettings* regSett;
+    regSett = new QSettings("Organization-name","Project-name");
+    if(regSett->value("KEY","failed").toString().length()==21)
+    {
     DownloaderUI UI;
     this->close();
     UI.setWindowFlags(Qt::Window);
     UI.setModal(true);
     UI.exec();
     this->show();
-    //getAPIkey();
+    }
+    else QMessageBox::warning(this,"Failed","APIKEY is invalid, do parse a correct APIKEY before using the downloader!");
+
 }
 
 void SettingsDialog::on_pushButton_5_clicked()
@@ -125,10 +131,16 @@ void SettingsDialog::on_pushButton_5_clicked()
     webviewDialog2->layout()->setMargin(0);
     webView2->setUrl(QString("https://ivle.nus.edu.sg/LAPI/default.aspx"));
     webviewDialog2->show();
+    QSettings settings ("IVLE", "App");
+    settings.beginGroup("userinfo");
+    settings.setValue("tempUsername", "null");
+    settings.setValue("tempPassword", "null");
+    settings.endGroup();
     getAPIkey();
 }
 void SettingsDialog::getAPIkey()
 {
+
     QUrl url("https://ivle.nus.edu.sg/LAPI/default.aspx");//url to obtain the APIKEY
     webView2->setUrl(url);
     //Signals and slot function that ensures that the webpage is loaded finish before executing the parse function
@@ -145,5 +157,6 @@ void SettingsDialog::parse(bool){
     QSettings* regSett;
     regSett = new QSettings("Organization-name","Project-name");
     regSett->setValue("KEY",APIKEY); //Store value of key defined by user
-    //qDebug()<<regSett->value("KEY","does not exist");
+
+    qDebug()<<regSett->value("KEY","does not exist");
 }
