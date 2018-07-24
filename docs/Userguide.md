@@ -18,20 +18,19 @@ The IVLE Downloader is the application that automatically downloads study materi
 ##### After downloading all the files, click on this file,IVLEDownloader:
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Files.png" width="500"></p>
 
-<br>
 ##### After downloading and running the IVLEDownloader file it should show you this:
 ![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/login.png)
-<br>
+
 ##### This is a web browser that helps us extract a API key for you so that you will be able to retrieve information through IVLE for our code to help you extract all the important information by IVLE:
 ![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/IVLElogin.png)
 
 ##### After login in you will see this screen which generates an APIkey that i’ve erased out & close the browser:
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/APIKEY.png" width="500"></p>
 
-<br>
+
 ##### However, you still need to log in for us to generate a token for future authentication, so click on the login button:
 ![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/normallogin.png)
-<br>
+
 ##### This should be seen:
 
 ![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/normallogin2.png)
