@@ -12,34 +12,29 @@ The IVLE Downloader is the application that automatically downloads study materi
 
 ### 2. Download(This deployment is large because we have not cleaned up extra libraries yet)
 ##### Download the IVLE Downloader https://github.com/Geraldcdx/IVLEDownloader/releases and download the deployment.zip(this may take about 20-30minutes):
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Deployment2.png"></p>
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Deployment2.png"width="500"></p>
 
 ##### Click on the download button and save everything to a location easily accessed.**You will need to extract the file after!**
 ##### After downloading all the files, click on this file,IVLEDownloader:
-![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Files.png)
-<br>
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Files.png" width="500"></p>
+
 ##### After downloading and running the IVLEDownloader file it should show you this:
 ![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/login.png)
-<br>
+
 ##### This is a web browser that helps us extract a API key for you so that you will be able to retrieve information through IVLE for our code to help you extract all the important information by IVLE:
 ![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/IVLElogin.png)
 
 ##### After login in you will see this screen which generates an APIkey that i’ve erased out & close the browser:
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/APIKEY.png" width="500"></p>
 
-<br>
-##### However, you still need to log in for us to generate a token for future authentication, so click on the login button:
-![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/normallogin.png)
-<br>
-##### This should be seen:
 
+##### However, you still need to log in for us to generate a token for future authentication. **However, click yellow part to change directory first** and then red part to log in so the application will know how to store your files:
+![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/normallogin.png)
+
+##### This should be seen:
 ![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/normallogin2.png)
 
-
-##### After you login, please specify a location that you want to store all the information that we will be downloading to:
-
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/restart.png" width="600"></p>
-
+Click on
 ##### You are done! Enjoy having your own offline IVLE at your fingertips! For this prototype, you would have to stop the application and re-run it again!(We are trying to iron out some bugs, right click on the bottom as seen and select quit to close the app):
 
 
