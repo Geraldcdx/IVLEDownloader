@@ -11,7 +11,7 @@
 The IVLE Downloader is the application that automatically downloads study material/announcements/exam details from the IVLE management system in National University of Singapore(NUS). This automation will remove the process of manually downloading files and hence saves a lot of time for you! Furthermore, you will be able to enjoy the addition features added into the application.
 
 ### 2.Quick Start(This deployment is large because we have not cleaned up extra libraries yet)
-##### Download the IVLE Downloader from https://drive.google.com/drive/folders/1JQJRWs3FBgXUhdU5aG_9VGzSiQZ5ey1W?usp=sharing and extract the files:
+##### Download the IVLE Downloader from https://github.com/nicholasleeeee/IVLEDownloader/releases and extract the files:
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Deployment.png"></p>
 
 
