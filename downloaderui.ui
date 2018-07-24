@@ -48,10 +48,10 @@
           <bool>true</bool>
          </attribute>
          <attribute name="headerDefaultSectionSize">
-          <number>200</number>
+          <number>250</number>
          </attribute>
          <attribute name="headerMinimumSectionSize">
-          <number>50</number>
+          <number>100</number>
          </attribute>
         </widget>
        </item>
@@ -92,7 +92,7 @@
        <item>
         <widget class="QTableWidget" name="tableWidget_2">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
@@ -189,6 +189,15 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <attribute name="horizontalHeaderDefaultSectionSize">
+            <number>120</number>
+           </attribute>
+           <attribute name="verticalHeaderDefaultSectionSize">
+            <number>20</number>
+           </attribute>
+           <attribute name="verticalHeaderMinimumSectionSize">
+            <number>30</number>
+           </attribute>
            <row>
             <property name="text">
              <string>1</string>
@@ -372,11 +381,14 @@
          <item row="0" column="0">
           <widget class="QTableWidget" name="tableWidget_4">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Ignored" vsizetype="Minimum">
+            <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <attribute name="horizontalHeaderDefaultSectionSize">
+            <number>290</number>
+           </attribute>
            <row>
             <property name="text">
              <string>1</string>
@@ -481,6 +493,12 @@
          <height>621</height>
         </rect>
        </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="url" stdset="0">
         <url>
          <string>about:blank</string>
@@ -490,16 +508,22 @@
       <widget class="QGroupBox" name="groupBox">
        <property name="geometry">
         <rect>
-         <x>270</x>
-         <y>140</y>
+         <x>160</x>
+         <y>100</y>
          <width>471</width>
          <height>231</height>
         </rect>
        </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="title">
         <string>Sign In</string>
        </property>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>50</x>
