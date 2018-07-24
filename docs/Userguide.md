@@ -12,11 +12,12 @@ The IVLE Downloader is the application that automatically downloads study materi
 
 ### 2. Download(This deployment is large because we have not cleaned up extra libraries yet)
 ##### Download the IVLE Downloader https://github.com/Geraldcdx/IVLEDownloader/releases and download the deployment.zip(this may take about 20-30minutes):
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Deployment2.png"></p>
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Deployment2.png"width="500"></p>
 
 ##### Click on the download button and save everything to a location easily accessed.**You will need to extract the file after!**
 ##### After downloading all the files, click on this file,IVLEDownloader:
-![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Files.png)
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Files.png" width="500"></p>
+
 <br>
 ##### After downloading and running the IVLEDownloader file it should show you this:
 ![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/login.png)
