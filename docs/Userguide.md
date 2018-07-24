@@ -46,20 +46,20 @@ The IVLE Downloader is the application that automatically downloads study materi
 ## 3.Features
 * Files tab
 Here you can access all your different files stored in neat folders:
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/filestab.png" width="500"></p>
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/filestab.png" width="700"></p>
 
 *  Announcements tab
 Here you can access all the different announcement information that you need for school(this should be done by milestone 3, now its empty):
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/announcementstab.png" width="500"></p>
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/announcementtab.png" width="700"></p>
 
 * Exams and to-do-list Tab:
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Exam.png" width="500"></p>
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Exam.png" width="700"></p>
 
 * Outlook Tab:
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Outlook.png" width="500"></p>
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Outlook.png" width="700"></p>
 
 * NUSWhisper's Tab:
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/nuswtab.png" width="500"></p>
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/nuswtab.png" width="700"></p>
 
 
 
