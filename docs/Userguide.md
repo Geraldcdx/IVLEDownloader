@@ -68,8 +68,8 @@ The IVLE Downloader is the application that automatically downloads study materi
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/nuswtab.png" width="800"></p>
 
 
-### 4. FAQ
-#### If : face high DPI scaling issues as such:
+## 4. FAQ
+### If I face high DPI scaling issues as such:
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/error.png" width="200"></p>
 
 #### Follow the instructions below:
@@ -80,4 +80,4 @@ The IVLE Downloader is the application that automatically downloads study materi
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/scalingprop2.png" width="300"></p>
 
 3) For a 4k resolution computer, click on "change high DPI settings" and then "Override high scaling DPI scaling behaviour" and change to system, press okay, apply, close and reopen the app and it should work:
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/scalingprop3.png" width="300"></p>
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/scalingprop3.png" width="500"></p>
