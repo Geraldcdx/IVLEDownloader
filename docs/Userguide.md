@@ -10,58 +10,51 @@
 ### 1.Introduction
 The IVLE Downloader is the application that automatically downloads study material/announcements/exam details from the IVLE management system in National University of Singapore(NUS). This automation will remove the process of manually downloading files and hence saves a lot of time for you! Furthermore, you will be able to enjoy the addition features added into the application.
 
-## 2. Download(This deployment is large because we have not cleaned up extra libraries yet)
-#### Download the IVLE Downloader https://github.com/Geraldcdx/IVLEDownloader/releases and download the deployment.zip(this may take about 20-30minutes):
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Deployment2.png"width="500"></p>
+### 2.Quick Start(This deployment is large because we have not cleaned up extra libraries yet)
+##### Download the IVLE Downloader from https://drive.google.com/drive/folders/1JQJRWs3FBgXUhdU5aG_9VGzSiQZ5ey1W?usp=sharing and extract the files:
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Deployment.png"></p>
 
-#### Click on the download button and save everything to a location easily accessed.**You will need to extract the file after!**
-#### After downloading all the files, click on this file,IVLEDownloader:
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Files.png" width="500"></p>
 
-#### After downloading and running the IVLEDownloader file it should show you this:
+
+##### Click on the download button and save everything to a location easily accessed.
+##### After downloading all the files, click on this file,IVLEDownloader:
+![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Files.png)
+
+##### After downloading and running the IVLEDownloader file it should show you this:
 ![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/login.png)
 
-#### This is a web browser that helps us extract a API key for you so that you will be able to retrieve information through IVLE for our code to help you extract all the important information by IVLE:
+##### This is a web browser that helps us extract a API key for you so that you will be able to retrieve information through IVLE for our code to help you extract all the important information by IVLE:
 ![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/IVLElogin.png)
 
-#### After login in you will see this screen which generates an APIkey that i’ve erased out & close the browser:
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/APIKEY.png" width="500"></p>
+##### After login in you will see this screen which generates an APIkey that i’ve erased out:
+<p align="center"><img src="(https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/APIKEY.png" width="500"></p>
 
 
-#### However, you still need to log in for us to generate a token for future authentication. **However, click yellow part to change directory first** and then red part to log in so the application will know how to store your files:
+##### However, you still need to log in for us to generate a token for future authentication, so click on the login button:
 ![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/normallogin.png)
 
-#### This should be seen:
+##### This should be seen:
+
 ![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/normallogin2.png)
 
-#### View the settings at the bottom right hand corner of your screen:
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/findsettings.png" width="300"></p>
 
-#### Click on the IVLE Downloader to start:
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Settings.png" width="300"></p>
+##### After you login, please specify a location that you want to store all the information that we will be downloading to:
 
-#### If you encounter any errors like this, just go to any corner of the window and stretch it out:
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/error.png" width="300"></p>
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/restart.png" width="600"></p>
 
-## 3.Features
+##### You are done! Enjoy having your own offline IVLE at your fingertips! For this prototype, you would have to stop the application and re-run it again!(We are trying to iron out some bugs, right click on the bottom as seen and select quit to close the app):
+
+
+### 3.Features
 * Files tab
 Here you can access all your different files stored in neat folders:
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/filestab.png" width="500"></p>
 
 *  Announcements tab
 Here you can access all the different announcement information that you need for school(this should be done by milestone 3, now its empty):
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/announcementstab.png" width="500"></p>
-
-* Exams and to-do-list Tab:
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Exam.png" width="500"></p>
-
-* Outlook Tab:
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Outlook.png" width="500"></p>
-
-* NUSWhisper's Tab:
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/nuswtab.png" width="500"></p>
 
 
 
+* Exam Details tab
+Here is the place that keep track of all your important Midterm and Final Exams!(this should be done by milestone 3, now its empty):
 
 ### 4. FAQ

@@ -10,6 +10,12 @@
     <height>700</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
    <string>IVLE Downloader</string>
   </property>
@@ -17,7 +23,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>4</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -50,8 +56,14 @@
          <attribute name="headerDefaultSectionSize">
           <number>250</number>
          </attribute>
+         <attribute name="headerHighlightSections">
+          <bool>true</bool>
+         </attribute>
          <attribute name="headerMinimumSectionSize">
           <number>100</number>
+         </attribute>
+         <attribute name="headerStretchLastSection">
+          <bool>true</bool>
          </attribute>
         </widget>
        </item>
@@ -97,6 +109,9 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <attribute name="horizontalHeaderCascadingSectionResizes">
+          <bool>true</bool>
+         </attribute>
         </widget>
        </item>
        <item>
@@ -147,6 +162,36 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="sizeAdjustPolicy">
+            <enum>QAbstractScrollArea::AdjustIgnored</enum>
+           </property>
+           <property name="alternatingRowColors">
+            <bool>true</bool>
+           </property>
+           <property name="wordWrap">
+            <bool>false</bool>
+           </property>
+           <attribute name="horizontalHeaderCascadingSectionResizes">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="horizontalHeaderDefaultSectionSize">
+            <number>200</number>
+           </attribute>
+           <attribute name="horizontalHeaderMinimumSectionSize">
+            <number>149</number>
+           </attribute>
+           <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="horizontalHeaderStretchLastSection">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="verticalHeaderDefaultSectionSize">
+            <number>50</number>
+           </attribute>
+           <attribute name="verticalHeaderMinimumSectionSize">
+            <number>50</number>
+           </attribute>
           </widget>
          </item>
          <item>
@@ -189,11 +234,35 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="contextMenuPolicy">
+            <enum>Qt::NoContextMenu</enum>
+           </property>
+           <property name="lineWidth">
+            <number>1</number>
+           </property>
+           <property name="autoScrollMargin">
+            <number>10</number>
+           </property>
+           <property name="alternatingRowColors">
+            <bool>true</bool>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>5</width>
+             <height>10</height>
+            </size>
+           </property>
+           <property name="sortingEnabled">
+            <bool>false</bool>
+           </property>
            <attribute name="horizontalHeaderDefaultSectionSize">
             <number>120</number>
            </attribute>
+           <attribute name="horizontalHeaderMinimumSectionSize">
+            <number>47</number>
+           </attribute>
            <attribute name="verticalHeaderDefaultSectionSize">
-            <number>20</number>
+            <number>30</number>
            </attribute>
            <attribute name="verticalHeaderMinimumSectionSize">
             <number>30</number>
@@ -201,6 +270,11 @@
            <row>
             <property name="text">
              <string>1</string>
+            </property>
+            <property name="font">
+             <font>
+              <kerning>true</kerning>
+             </font>
             </property>
            </row>
            <row>
@@ -381,10 +455,13 @@
          <item row="0" column="0">
           <widget class="QTableWidget" name="tableWidget_4">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+           <property name="alternatingRowColors">
+            <bool>true</bool>
            </property>
            <attribute name="horizontalHeaderDefaultSectionSize">
             <number>290</number>
@@ -484,27 +561,30 @@
       <attribute name="title">
        <string>Outlook</string>
       </attribute>
-      <widget class="QWebView" name="webView_2" native="true">
-       <property name="geometry">
-        <rect>
-         <x>9</x>
-         <y>26</y>
-         <width>1158</width>
-         <height>621</height>
-        </rect>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="url" stdset="0">
-        <url>
-         <string>about:blank</string>
-        </url>
-       </property>
-      </widget>
+      <layout class="QFormLayout" name="formLayout">
+       <item row="0" column="0">
+        <widget class="QPushButton" name="pushButton_forgetMe">
+         <property name="text">
+          <string>Signout / Reset</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QWebView" name="webView_2" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="url" stdset="0">
+          <url>
+           <string>about:blank</string>
+          </url>
+         </property>
+        </widget>
+       </item>
+      </layout>
       <widget class="QGroupBox" name="groupBox">
        <property name="geometry">
         <rect>
@@ -575,19 +655,6 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QPushButton" name="pushButton_forgetMe">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>91</width>
-         <height>23</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Signout / Reset</string>
-       </property>
-      </widget>
      </widget>
      <widget class="QWidget" name="tab_5">
       <attribute name="title">
@@ -596,6 +663,18 @@
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
         <widget class="QWebView" name="webView" native="true">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::WheelFocus</enum>
+         </property>
          <property name="url" stdset="0">
           <url>
            <string>about:blank</string>

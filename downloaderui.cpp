@@ -28,7 +28,8 @@
 #include <QPushButton>
 #include <QSqlDatabase>
 #include <QMessageBox>
-#include <QWebHistory>
+#include <QTreeView>
+#include <QHeaderView>
 
 DownloaderUI::DownloaderUI(QWidget *parent) :
     QDialog(parent),
@@ -79,6 +80,7 @@ void DownloaderUI::setupFiles(QString sPath)
     listmodel=new QFileSystemModel(this);
     listmodel->setRootPath(sPath);
     ui->listView->setModel(listmodel);
+    ui->treeView->header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
 }
 
 //For the folder view on the left
@@ -86,6 +88,7 @@ void DownloaderUI::on_treeView_clicked(const QModelIndex &index)
 {
     QString sPath=dirmodel->fileInfo(index).absoluteFilePath();
     ui->listView->setRootIndex(listmodel->setRootPath(sPath));
+
 }
 //For the documents view on the right
 void DownloaderUI::on_listView_clicked(const QModelIndex &index)
@@ -270,6 +273,7 @@ void DownloaderUI::setExamTable()
     QStringList headers;
     headers<<"Module"<<"Date of Exam";
     ui->tableWidget_2->setHorizontalHeaderLabels(headers);
+    ui->tableWidget_2->resizeColumnsToContents();
 }
 void DownloaderUI::examsParsing()
 {
@@ -332,14 +336,19 @@ void DownloaderUI::setTableHeaders()
     QStringList headers;
     headers<<"Module"<<"Credit Units"<<"Grade"<<"Current CAP";
     ui->tableWidget->setHorizontalHeaderLabels(headers);
+    ui->tableWidget->resizeColumnsToContents();
     loadCAPscores();//loads the cap scores
     ui->tableWidget_3->setAlternatingRowColors(true);
     ui->tableWidget_3->resizeColumnsToContents();
     ui->tableWidget_4->setAlternatingRowColors(true);
     ui->tableWidget_4->resizeColumnsToContents();
     for(int i=0;i<11;i++)
-        for(int j=0;j<2;j++)
+        for(int j=0;j<2;j++){
             ui->tableWidget_3->item(i,j)->setTextAlignment(Qt::AlignCenter);
+
+        }
+     ui->tableWidget_3->resizeRowsToContents();
+     ui->tableWidget_4->resizeRowsToContents();
 }
 //Press to add module and calculate CAP
 void DownloaderUI::on_pushButton_2_clicked()
