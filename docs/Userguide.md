@@ -40,8 +40,8 @@ The IVLE Downloader is the application that automatically downloads study materi
 #### Click on the IVLE Downloader to start:
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Settings.png" width="300"></p>
 
-#### If you encounter any errors like this, just go to any corner of the window and stretch it out:
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/error.png" width="300"></p>
+#### If you encounter any errors like this, refer to FAQ for help:
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/error.png" width="200"></p>
 
 ## 3.Features
 * Files Tab
@@ -68,6 +68,16 @@ The IVLE Downloader is the application that automatically downloads study materi
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/nuswtab.png" width="800"></p>
 
 
-
-
 ### 4. FAQ
+#### If : face high DPI scaling issues as such:
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/error.png" width="200"></p>
+
+#### Follow the instructions below:
+1) Go to the application and right click on properties:
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/scalingprop.png" width="300"></p>
+
+2) Go to the compatability tab! This is where you can play around to set the scaling settings:
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/scalingprop2.png" width="300"></p>
+
+3) For a 4k resolution computer, click on "change high DPI settings" and then "Override high scaling DPI scaling behaviour" and change to system, press okay, apply, close and reopen the app and it should work:
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/scalingprop3.png" width="300"></p>
