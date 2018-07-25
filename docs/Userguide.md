@@ -42,19 +42,22 @@ The IVLE Downloader is the application that automatically downloads study materi
 
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/restart.png" width="600"></p>
 
-##### You are done! Enjoy having your own offline IVLE at your fingertips! For this prototype, you would have to stop the application and re-run it again!(We are trying to iron out some bugs, right click on the bottom as seen and select quit to close the app):
-
-
-### 3.Features
+## 3.Features
 * Files tab
 Here you can access all your different files stored in neat folders:
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/filestab.png" width="500"></p>
 
 *  Announcements tab
 Here you can access all the different announcement information that you need for school(this should be done by milestone 3, now its empty):
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/announcementstab.png" width="500"></p>
 
+* Exams and to-do-list Tab:
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Exam.png" width="500"></p>
 
+* Outlook Tab:
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Outlook.png" width="500"></p>
 
-* Exam Details tab
-Here is the place that keep track of all your important Midterm and Final Exams!(this should be done by milestone 3, now its empty):
+* NUSWhisper's Tab:
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/nuswtab.png" width="500"></p>
 
 ### 4. FAQ
