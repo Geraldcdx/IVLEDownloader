@@ -1,7 +1,8 @@
 # IVLE Downloader - Offline IVLE
 
 ### This is an **application** that will be used by National University of Singapore(NUS) students to access files from the Integrated Virtual Learning Environment(IVLE).
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Offline%20IVLE.png"width="500"></p>
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Offline%20IVLE.png"width="750"></p>
+
 ### **Features of this IVLE Downloader include:**
 | No       | Feature      |Function  |
 |----------- |:-----------------------|:-----|
