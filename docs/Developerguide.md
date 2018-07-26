@@ -129,7 +129,13 @@ Everything can be found here regarding the [IVLE API.](https://wiki.nus.edu.sg/d
  * Uses QtSQL to interact with SQLite to have a database to store to-do-list information.
  * When a user adds an item, the item will be stored on the database. When the user changes the slider value, it will update the database.
  ### 3.7 Outlook
- * NIC YOU HAVE TO WRITE THE IMMPLEMENTATION HERE
+ * startOutlook() called in downloaderui.cpp
+ * In startOutlook(), if user details were stored previously, loadOutlook() is called to log into outlook. If not, groupbox will show for user to input user information.
+ * Uses QSettings to allow user to input information written in on_pushbutton_login_clicked().
+ * loadOutlook() evaluates javascript of outlook and inserts user information into username, password placeholders and logs in.
+ * on_pushButton_forgetMe_clicked() resets user information back to null in Qsettings and brings user back to login page.
+ * Connect statements make sure that the webpage is loaded before keying inserting information.
+ 
  ### 3.8 CAP Calculator
  * Function called in DownloaderUI.cpp.
  * Uses QDialog to create a dialog to allow user to input information in written in Dialog.cpp.
@@ -147,4 +153,14 @@ Everything can be found here regarding the [IVLE API.](https://wiki.nus.edu.sg/d
 The testing of the IVLE Downloader has been successful.
 
 ## 5. Dev Ops
-### For making a release and ready for deployment
+### 5.1 Windows deployment:
+#### 1. Create a new deployment folder.
+#### 2. Go to the location where Qt was installed.
+#### 3. Copy the following into the deployment folder.
+####    All .dll files from qt/qtversion/compilerused/bin
+####    All folders from qt/qtversion/compilerused/plugin
+####    (If you used QML), all the folders from qt/qtversion/compilerused/qml
+####    The release version of MyApp.exe and paste into the deployment folder
+#### 4. Launch deployment/MyApp.exe
+#### 5. (Clean up) While running, try to delete all the DLLs. DLLs aren't used will go to the recycling bin, leaving behind only those         you need. You are done! Zip the file if you need to.
+#### 8. Copy the release version of MyApp.exe
