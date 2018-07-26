@@ -1,5 +1,5 @@
 # IVLE Downloader - User guide:
-[Developer Guide](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/Developerguide.md)
+[Developer Guide](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/Developerguide.md)<br>
 [ReadMe](https://github.com/Geraldcdx/IVLEDownloader/blob/master/README.md)
   ## 1. Introduction
   ## 2. Quick Start
