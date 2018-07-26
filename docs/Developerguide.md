@@ -66,7 +66,7 @@
  ### The two main UI components:
   * **MainWindow.ui** : Sets up information such as API key, log in and directory to allow users to enjoy the full experience of the IVLE Downloader. This also provides a settings function that can be seen as a running application at the icons running.
   * **DownloaderUI.ui** : Contains the UI information for all the mentioned tabs above. For a detailed view, visit [User Guide](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/Userguide.md).
- ## 2.3 Logic component
+ ### 2.3 Logic component
  Since this is written in C++ in OOP, there is always a .cpp file and .h file. If we want to create a UI, there will be a .ui file as well. Therefore, the way every .cpp,.h and .ui file is written to create a single class. In each class, different objects from different .h files can be called.
   <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Main.png" width="700"></p>
 The following is the objects present in our MainWindow class:
@@ -78,7 +78,7 @@ This is the UI whereby files, announcements, exam details, timetable, CAPCalcula
 The following is the objects present in our DownloaderUI class:
    <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/DownloaderUI.png" width="700"></p>
    
- ## 2.4 Model component
+ ### 2.4 Model component
  Below is the exchanges between model and logic components to clarify the type of storage used in this application:
  <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Model.png" width="700"></p>
  
@@ -90,8 +90,8 @@ The following is the objects present in our DownloaderUI class:
 | 2 | QSettings     | Qt has a library called QSettings. The QSettings class provides persistent platform-independent application setting|
 | 3 | SQLite DB     |  Qt has a library called QtSQL. This class allows users to create SQLite DB and store information there|
  
-## 2.5 IVLE API component
-Everything can be found here regarding the IVLE API [](https://wiki.nus.edu.sg/display/ivlelapi/Module).
+### 2.5 IVLE API component
+Everything can be found here regarding the [IVLE API.](https://wiki.nus.edu.sg/display/ivlelapi/Module).
 ## 3. Implementation:
 ### 3.1 Login Implementation
  * This code can be found in MainWindow.cpp.
@@ -130,7 +130,7 @@ Everything can be found here regarding the IVLE API [](https://wiki.nus.edu.sg/d
  * When a user adds an item, the item will be stored on the database. When the user changes the slider value, it will update the database.
  ### 3.7 Outlook
  * NIC YOU HAVE TO WRITE THE IMMPLEMENTATION HERE
- ### 3.7 CAP Calculator
+ ### 3.8 CAP Calculator
  * Function called in DownloaderUI.cpp.
  * Uses QDialog to create a dialog to allow user to input information in written in Dialog.cpp.
  * Uses QTableWidget to display CAP by user.
