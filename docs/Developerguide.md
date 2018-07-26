@@ -112,28 +112,28 @@ The following is the objects present in our DownloaderUI class:
  * ExternalPageParser.cpp is implemented to parse pages,
  * IVLEFetcher.cpp is implemented to poll from the IVLE api and obtain files using the ExternalPageParser object and promises to provide concurrent downloading of files.
  ### 3.4 Announcements
- * Found in Announcements.cpp and called in DownloaderUI.cpp.
+ * Function called in DownloaderUI.cpp.
  * Uses parsing with QWebview, QWebFrame, QWebElement, IVLE API and qtJSON to parse module ID, module name and announcements.
  * Uses QDir to store announcements into a txt file.
  * Uses QTabWidgets to create announcements based on the number of modules present.
  ### 3.5 Exam Details
- * Found in Exam.cpp and called in DownloaderUI.cpp.
+ * Function called in DownloaderUI.cpp.
  * Uses parsing with QWebview, QWebFrame, QWebElement, IVLE API and qtJSON to parse announcements using module ID stored in 3.4.
  * Uses QTableWidget to make a custom number of tables based on number of modules.
- ### 3.6 Time Table
- * Found in TimeTable.cpp and called in DownloaderUI.cpp.
- * Uses QPixMap to display Time Table.
- ### 3.7 CAP Calculator
- * Found in CAPCalculator.cpp called in DownloaderUI.cpp.
- * Uses QDialog to create a dialog to allow user to input information in written in Dialog.cpp.
- * Uses QTableWidget to display CAP by user.
- * Custom code written to help students determine average score they need for future semesters.
- ### 3.8 To-Do-List
- * Found in ToDoList.cpp called in DownloaderUI.cpp.
+ ### 3.6 To-Do-List
+ * Function called in in DownloaderUI.cpp.
  * Uses QDialog to allow users to input information written in addItem.cpp.
  * Uses QWidget to custom create widgets written in Item.cpp.
  * Uses QtSQL to interact with SQLite to have a database to store to-do-list information.
  * When a user adds an item, the item will be stored on the database. When the user changes the slider value, it will update the database.
+ ### 3.7 Outlook
+ * NIC YOU HAVE TO WRITE THE IMMPLEMENTATION HERE
+ ### 3.7 CAP Calculator
+ * Function called in DownloaderUI.cpp.
+ * Uses QDialog to create a dialog to allow user to input information in written in Dialog.cpp.
+ * Uses QTableWidget to display CAP by user.
+ * Custom code written to help students determine average score they need for future semesters.
+ 
  
 ## 4. Testing
 ### 4.1 Types of testing:
