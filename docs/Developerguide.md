@@ -61,7 +61,7 @@
    
  ## 2.2 UI component
  ### *The UI components work hand in hand with the logic component to get relevant information to display on the UI to allow users to view all offline IVLE information.*
- <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/UI.png" width="600"></p>
+ <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/UIdiagram.png" width="600"></p>
  
  ### The two main UI components:
   * **MainWindow.ui** : Sets up information such as API key, log in and directory to allow users to enjoy the full experience of the IVLE Downloader. This also provides a settings function that can be seen as a running application at the icons running.
