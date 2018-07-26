@@ -74,9 +74,9 @@ The following is the objects present in our MainWindow class:
    
  ### DownloaderUI.ui
 This is the UI whereby files, announcements, exam details, timetable, CAPCalculator, to-do-list and NUSWhispers can be seen.
-   <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/DownloaderUI.png" width="700"></p>
+   <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/DownloaderUI.ui.png" width="700"></p>
 The following is the objects present in our DownloaderUI class:
-   <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/DownloaderUIO.png" width="700"></p>
+   <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/DownloaderUI.png" width="700"></p>
    
  ## 2.4 Model component
  Below is the exchanges between model and logic components to clarify the type of storage used in this application:
