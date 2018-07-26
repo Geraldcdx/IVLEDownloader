@@ -156,21 +156,21 @@ The testing of the IVLE Downloader has been successful.
 ### 5.1 Windows Deployment: To deploy a Windows Qt app, you will need files from a few locations.
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Qt_Deployment_Structure_Windows.png"width="800"></p>
 
- 1. Create a new deployment folder.
- 2. Go to the location where Qt was installed.
- 3. Copy the following into the deployment folder:
-     All .dll files from qt/qtversion/compilerused/bin
-     All folders from qt/qtversion/compilerused/plugin
-     (If you used QML), all the folders from qt/qtversion/compilerused/qml
-     The release version of MyApp.exe and paste into the deployment folder
- 4. Launch deployment/MyApp.exe
- 5. (Clean up) While running, try to delete all the DLLs. DLLs aren't used will go to the recycling bin, leaving behind only those         you need. You are done! Zip the file if you need to.
+ #### 1. Create a new deployment folder.
+ #### 2. Go to the location where Qt was installed.
+ #### 3. Copy the following into the deployment folder:
+ #### All .dll files from qt/qtversion/compilerused/bin
+ #### All folders from qt/qtversion/compilerused/plugin
+ #### (If you used QML), all the folders from qt/qtversion/compilerused/qml
+ #### The release version of MyApp.exe and paste into the deployment folder
+ #### 4. Launch deployment/MyApp.exe
+ #### 5. (Clean up) While running, try to delete all the DLLs. DLLs aren't used will go to the recycling bin, leaving behind only those         you need. You are done! Zip the file if you need to.
 
 ### 5.2 Mac Deployment (terminal):
- 1. Close qt creator
- 2. In terminal, cd into your project folder
- 3. qmake projectname.pro
- 4. make
- 5. Open .app file to test if its working
- 6. To deploy type: macdeployqt MyApp.app/
-    add -dmg at the back of the command if you want a disk image version
+#### 1. Close qt creator
+#### 2. In terminal, cd into your project folder
+#### 3. qmake projectname.pro
+#### 4. make
+#### 5. Open .app file to test if its working
+#### 6. To deploy type: macdeployqt MyApp.app/
+#### add -dmg at the back of the command if you want a disk image version
