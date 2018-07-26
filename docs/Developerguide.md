@@ -93,7 +93,7 @@ The following is the objects present in our DownloaderUI class:
 | 3 | SQLite DB     |  Qt has a library called QtSQL. This class allows users to create SQLite DB and store information there|
  
 ### 2.5 IVLE API component
-Everything can be found here regarding the [IVLE API.](https://wiki.nus.edu.sg/display/ivlelapi/Module).
+Everything can be found here regarding the [IVLE API](https://wiki.nus.edu.sg/display/ivlelapi/Module).
 ## 3. Implementation:
 ### 3.1 Login Implementation
  * This code can be found in MainWindow.cpp.
@@ -154,15 +154,15 @@ The testing of the IVLE Downloader has been successful.
 
 ## 5. Dev Ops
 ### 5.1 Windows Deployment:
-#### 1. Create a new deployment folder.
-#### 2. Go to the location where Qt was installed.
-#### 3. Copy the following into the deployment folder.
-####    All .dll files from qt/qtversion/compilerused/bin
-####    All folders from qt/qtversion/compilerused/plugin
-####    (If you used QML), all the folders from qt/qtversion/compilerused/qml
-####    The release version of MyApp.exe and paste into the deployment folder
-#### 4. Launch deployment/MyApp.exe
-#### 5. (Clean up) While running, try to delete all the DLLs. DLLs aren't used will go to the recycling bin, leaving behind only those         you need. You are done! Zip the file if you need to.
+ 1. Create a new deployment folder.
+ 2. Go to the location where Qt was installed.
+ 3. Copy the following into the deployment folder:
+  * All .dll files from qt/qtversion/compilerused/bin
+  * All folders from qt/qtversion/compilerused/plugin
+  * (If you used QML), all the folders from qt/qtversion/compilerused/qml
+  * The release version of MyApp.exe and paste into the deployment folder
+4. Launch deployment/MyApp.exe
+5. (Clean up) While running, try to delete all the DLLs. DLLs aren't used will go to the recycling bin, leaving behind only those         you need. You are done! Zip the file if you need to.
 
 ### 5.2 Mac Deployment (terminal):
 #### 1. Close qt creator
