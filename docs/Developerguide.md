@@ -169,8 +169,8 @@ The testing of the IVLE Downloader has been successful.
 ### 5.2 Mac Deployment (terminal):
 #### 1. Close qt creator
 #### 2. In terminal, cd into your project folder
-#### 3. qmake projectname.pro
-#### 4. make
+#### 3. In terminal, type 'qmake projectname.pro'
+#### 4. Then type 'make'
 #### 5. Open .app file to test if its working
-#### 6. To deploy type: macdeployqt MyApp.app/
+#### 6. To deploy, type: macdeployqt MyApp.app/
 #### add -dmg at the back of the command if you want a disk image version
