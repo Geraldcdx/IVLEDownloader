@@ -32,7 +32,7 @@ The IVLE Downloader is the application that automatically downloads study materi
 #### 4. Lastly, if you are still prompted with this, click on open. IVLEDownloader should launch after this.
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/MacDeploy4.png" width="500"></p>
 
-### After downloading and running the IVLEDownloader file it should show you this:
+## After downloading and running the IVLEDownloader file it should show you this:
 ![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/login.png)
 
 #### This is a web browser that helps us extract a API key for you so that you will be able to retrieve information through IVLE for our code to help you extract all the important information by IVLE:
