@@ -1,5 +1,5 @@
 # IVLE Downloader - Developer Guide
-[User Guide](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/Userguide.md)
+[User Guide](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/Userguide.md)<br>
 [README](https://github.com/Geraldcdx/IVLEDownloader/blob/master/README.md)
 ## 1. Setting Up:
 * 1.1 Prerequisites
@@ -106,7 +106,7 @@ Everything can be found here regarding the [IVLE API.](https://wiki.nus.edu.sg/d
  * This code can be found in DownloaderUI.cpp.
  * The UI is created using QTabWidgets in the class DownloaderUI. Every tab is hardcoded to make a Files Tab, Announcements Tab, Exam Details Tab, TimeTable Tab, CAP Calculator Tab, To-Do-List Tab and NUSWhispers Tab.
  * The NUSWhispers Tab uses QWebview to display a browser with a URL, this is found in DownloaderUI class.
- * Code to display Files Tab is made using QFileModelSystem and QTreeView.
+ * setupFiles(QString) is used to display Files Tab is made using QFileModelSystem and QTreeView.
 ### 3.3 Files
  * 80% of the code here was found in https://github.com/yyjhao/IVLEDownloader. Bugs fixed were addressing the API Key issue in 3.1 and increasing the frequency of polling from 5 minutes to 1 hour.
  * Yu Jian implemented his own version of Promises in Promises.cpp similar to javascript. He then uses the promises throughout his code.
@@ -116,16 +116,16 @@ Everything can be found here regarding the [IVLE API.](https://wiki.nus.edu.sg/d
  * ExternalPageParser.cpp is implemented to parse pages,
  * IVLEFetcher.cpp is implemented to poll from the IVLE api and obtain files using the ExternalPageParser object and promises to provide concurrent downloading of files.
  ### 3.4 Announcements
- * Function called in DownloaderUI.cpp.
+ * initParsing() called in DownloaderUI.cpp.
  * Uses parsing with QWebview, QWebFrame, QWebElement, IVLE API and qtJSON to parse module ID, module name and announcements.
  * Uses QDir to store announcements into a txt file.
  * Uses QTabWidgets to create announcements based on the number of modules present.
  ### 3.5 Exam Details
- * Function called in DownloaderUI.cpp.
+ * initParsing() called in DownloaderUI.cpp.
  * Uses parsing with QWebview, QWebFrame, QWebElement, IVLE API and qtJSON to parse announcements using module ID stored in 3.4.
  * Uses QTableWidget to make a custom number of tables based on number of modules.
  ### 3.6 To-Do-List
- * Function called in in DownloaderUI.cpp.
+ * initDB() called in in DownloaderUI.cpp.
  * Uses QDialog to allow users to input information written in addItem.cpp.
  * Uses QWidget to custom create widgets written in Item.cpp.
  * Uses QtSQL to interact with SQLite to have a database to store to-do-list information.
@@ -139,7 +139,7 @@ Everything can be found here regarding the [IVLE API.](https://wiki.nus.edu.sg/d
  * Connect statements make sure that the webpage is loaded before keying inserting information.
  
  ### 3.8 CAP Calculator
- * Function called in DownloaderUI.cpp.
+ * setTableHeaders() called in DownloaderUI.cpp.
  * Uses QDialog to create a dialog to allow user to input information in written in Dialog.cpp.
  * Uses QTableWidget to display CAP by user.
  * Custom code written to help students determine average score they need for future semesters.
@@ -148,9 +148,7 @@ Everything can be found here regarding the [IVLE API.](https://wiki.nus.edu.sg/d
 ## 4. Testing
 ### 4.1 Types of testing:
 * Since it was done in the summer, there was no modules available. However, we requested help from professors to get CP2106 and CS2040 available to be used for testing.
-* Unit tests targeting the lowest level methods/classes and ensured that each class functioned properly.
-* Integration tests that are checking the integration of all code units and each class would work properly.
-* Hybrids of unit and integration tests. These test are checking multiple code units as well as how the are connected together. The GUI and code worked together to achieve the intended outcome that we set.
+
 ### 4.2 Conclusion:
 The testing of the IVLE Downloader has been successful.
 
