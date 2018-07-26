@@ -48,13 +48,13 @@
    <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/usermodel1.png"width="700"></p>
    
   ### **Further explanation of example model:**
-| No       | Arrow                   |Elaboration andExample functions  |
+| No       | Arrow                   |Elaboration and Example functions  |
 |----------- |:-----------------------|:-----|
-| 1 | User executes app | User will activate app and input information. <br> For example, opening files, logging in to outlook, adding CAP scores and adding items in to-do-list |
+| 1 | User executes app | User will activate app and input information. <br> For example, opening files, logging in to outlook, adding CAP scores and adding items in to-do-list. |
 | 2| Code to set-up UI | UI will prompt Logic to run code to make the UI intended for the user.<br>For example, creating the DownloaderUI object along with all the different UI objects found in DownloaderUI. |
 | 3| Request for information | Logic will retrieve information from model. <br> For example, files, exam details, announcements, to-do-list items and outlook information.  |
 | 4   | Returns information | Information needed from request for information will be given here. |
-| 5   | Logic polls for updates | Logic will poll IVLE for updates using the IVLE API.<br> For example, getting files, announcements and exam details |
+| 5   | Logic polls for updates | Logic will poll IVLE for updates using the IVLE API.<br> For example, getting files, announcements and exam details. |
 | 6   | Returns info from API | Model returns all information on updates from IVLE. |
 | 7   | Code to display on UI | Logic used information obtained from Model to display on the UI.|
 | 8   | User interacts with app  | For Users to further interact with the app|
