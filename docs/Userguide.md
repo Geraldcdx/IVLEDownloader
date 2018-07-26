@@ -27,8 +27,8 @@ The IVLE Downloader is the application that automatically downloads study materi
 #### After login in you will see this screen which generates an APIkey that i’ve erased out & close the browser:
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/APIKEY.png" width="500"></p>
 
-
-#### However, you still need to log in for us to generate a token for future authentication. **However, click yellow part to change directory first** and then red part to log in so the application will know how to store your files:
+#### IMPORTANT: you need to change Directory first before logging in!!!!
+#### However, you still need to log in for us to generate a token for future authentication:
 ![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/normallogin.png)
 
 #### This should be seen:
