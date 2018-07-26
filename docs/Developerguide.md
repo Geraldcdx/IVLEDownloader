@@ -1,6 +1,6 @@
 # IVLE Downloader - Developer Guide
 [User Guide](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/Userguide.md)
-[README](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/README.md)
+[README](https://github.com/Geraldcdx/IVLEDownloader/blob/master/README.md)
 ## 1. Setting Up:
 * 1.1 Prerequisites
 * 1.2 Setting up the Project on your computer
