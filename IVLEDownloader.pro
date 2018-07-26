@@ -8,7 +8,7 @@ QT       += core gui sql\
             widgets\
             webkitwidgets\
             network
-CONFIG +=c++11
+CONFIG +=c++11 app_bundle
 macx{
     QMAKE_CXXFLAGS = -mmacosx-version-min=10.7 -std=gnu++0x -stdlib=libc++
 }
