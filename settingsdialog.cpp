@@ -39,7 +39,7 @@ void SettingsDialog::onWebviewLoaded(){
     if(url.host() == QString("ivle.nus.edu.sg")&&
             url.path() == QString("/api/login/login_result.ashx")&&
             QUrlQuery(url).queryItemValue("r") == QString("0")){
-        qDebug()<<"OK!";
+        //qDebug()<<"OK!";
         webviewDialog->close();
         emit gottenToken(webView->page()->mainFrame()->toPlainText());
     }
@@ -158,5 +158,5 @@ void SettingsDialog::parse(bool){
     regSett = new QSettings("Organization-name","Project-name");
     regSett->setValue("KEY",APIKEY); //Store value of key defined by user
 
-    qDebug()<<regSett->value("KEY","does not exist");
+    //qDebug()<<regSett->value("KEY","does not exist");
 }

@@ -58,13 +58,13 @@ void DownloaderUI::initParser()
 //Preprocessing that clears default tabs
 void DownloaderUI::removeTabs()
 {
-    qDebug()<<ui->tabWidget_2->count();
+    //qDebug()<<ui->tabWidget_2->count();
     ui->tabWidget_2->setCurrentIndex(0);
     ui->tabWidget_2->removeTab(2);
     ui->tabWidget_2->removeTab(1);
     ui->tabWidget_2->removeTab(0);
-    qDebug()<<"Test here";
-    qDebug()<<ui->tabWidget_2->count();
+    //qDebug()<<"Test here";
+    //qDebug()<<ui->tabWidget_2->count();
 }
 
 //FILES UI
@@ -504,7 +504,7 @@ void DownloaderUI::pull()
     //QString str="i";
     while (qry.next()){
             QSqlRecord record = qry.record();
-            qDebug() <<record.value("Item").toString()<<record.value("Progress").toInt();
+            //qDebug() <<record.value("Item").toString()<<record.value("Progress").toInt();
             Item *i=new Item;
             connect(i,SIGNAL(itemdeleted(QString)),this,SLOT(deleted(QString)));
             i->setText(record.value("Item").toString());
@@ -564,7 +564,7 @@ void DownloaderUI::on_pushButton_login_clicked()
     settings.setValue("tempUsername", ui->lineEdit_username->text());
     settings.setValue("tempPassword", ui->lineEdit_password->text());
     settings.endGroup();
-    qDebug()<< "temp details saved";
+    //qDebug()<< "temp details saved";
     startOutlook();
     emit login();
 
@@ -599,7 +599,7 @@ void DownloaderUI::on_pushButton_forgetMe_clicked()
     settings.setValue("tempUsername", "null");
     settings.setValue("tempPassword", "null");
     //settings.endGroup();
-    qDebug()<<settings.value("tempUsername","exist");
+    //qDebug()<<settings.value("tempUsername","exist");
 
     ui->webView_2->hide();
 //delete and recreate object
