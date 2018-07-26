@@ -9,11 +9,10 @@
 | 1             | User Interface(UI) | Students are able to interact with the downloaded files |
 | 2             | Files Tab | To view all files/documents from IVLE |
 | 3           | Announcements Tab | To view every single announcement downloaded from IVLE |
-| 4   | Examinations Tab | To view exam dates and time |
-| 5   | TimeTable Tab | To view the everyday schedule |
+| 4   | Examinations and To-Do-List Tab | To view exam dates and time + a To-Do-List |
+| 5   | Outlook Tab | To view your outlook emails & add NUS Mod calendar |
 | 6   | NUSWhispers Tab | To view a NUS informal forum |
 | 7   | CAP Calculator Tab | A Cumulative Average Grade Point(CAP) calculator to help students calculate their potential cap and gauge personal goals per semester|
-| 8   | To-Do-List Tab  | For students to mark their important homework due |
 ### **Background:** 
   1. This application is build using Qt Creator in Qt 5.02 and relevant libraries
   2. It is entirely written Object Orientated Programming with C++
