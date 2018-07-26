@@ -153,7 +153,7 @@ Everything can be found here regarding the [IVLE API.](https://wiki.nus.edu.sg/d
 The testing of the IVLE Downloader has been successful.
 
 ## 5. Dev Ops
-### 5.1 Windows deployment:
+### 5.1 Windows Deployment:
 #### 1. Create a new deployment folder.
 #### 2. Go to the location where Qt was installed.
 #### 3. Copy the following into the deployment folder.
@@ -163,4 +163,12 @@ The testing of the IVLE Downloader has been successful.
 ####    The release version of MyApp.exe and paste into the deployment folder
 #### 4. Launch deployment/MyApp.exe
 #### 5. (Clean up) While running, try to delete all the DLLs. DLLs aren't used will go to the recycling bin, leaving behind only those         you need. You are done! Zip the file if you need to.
-#### 8. Copy the release version of MyApp.exe
+
+### 5.2 Mac Deployment (terminal):
+#### 1. Close qt creator
+#### 2. In termianl, cd into your project folder
+#### 3. qmake projectname.pro
+#### 4. make
+#### 5. Open .app file to test if its working
+#### 6. To deploy type: macdeployqt MyApp.app/
+####    add -dmg at the back of the command if you want a disk image version
