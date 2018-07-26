@@ -13,9 +13,9 @@
  * 3.3 Files
  * 3.4 Announcements
  * 3.5 Exam Details
- * 3.6 Time Table
- * 3.7 CAP Calculator
- * 3.8 To-Do-List
+ * 3.6 To-Do-List
+ * 3.7 Outlook
+ * 3.8 CAP Calculator
 ## 4. Testing:
  * 4.1 Types of testing
  * 4.2 Conclusion
