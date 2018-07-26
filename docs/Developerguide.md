@@ -32,7 +32,7 @@
 ## 2. Design:
  ### *The **Architecture Diagram** given below explains the high-level design of the App. Given below is a quick overview of each component.*
  ## 2.1 Architecture
- <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Overview.png" width="600"></p>
+ <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Overview.png" width="700"></p>
  
 
  ### When the app is executed, the first time users will be called to extract their APIKey and login. Users that has logged in and done set-up procedures will be brought into a UI.
