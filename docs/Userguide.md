@@ -19,7 +19,7 @@ The IVLE Downloader is the application that automatically downloads study materi
 #### After downloading all the files, click on this file,IVLEDownloader:
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Files.png" width="500"></p>
 
-## For MacOS there are addition steps to follow, for windows just jump to after downloading:
+## For MacOS:
 #### 1. After downloading the dmg file, launch IVLEDownloader.app
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/MacDeploy1.png" width="500"></p>
 
