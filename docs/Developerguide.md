@@ -22,7 +22,7 @@
 ## 5. Dev Ops
 ## 1. Setting Up:
 #### 1.1 Prerequisites:
-  * First of all you have to download Qt Creator from https://www.qt.io/download. 
+  * Firstly, you have to download Qt Creator from https://www.qt.io/download. 
   * **Important**: to download any version of Qt 5.4 or lower. This is because the orignal code written here https://github.com/yyjhao/IVLEDownloader uses QWebKit which is library used by Qt 5.4 or lower.
 ##### 1.2 Setting up the Project on your computer
  * Open the whole project file using Qt Creator
@@ -31,15 +31,15 @@
 
 ## 2. Design:
  ### *The **Architecture Diagram** given below explains the high-level design of the App. Given below is a quick overview of each component.*
- ## 2.1 Architecture
+ ### 2.1 Architecture
  <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Overview.png" width="700"></p>
- 
 
- ### When the app is executed, the first time users will be called to extract their APIKey and login. Users that has logged in and done set-up procedures will be brought into a UI.
- ### The 3 components of the application that follow the Model View Controller(MVC) model are:
+ ### When the app is executed, the first time users will be called to extract their APIKey and login. Users that are logged in and done set-up procedures will be brought into a UI.
+ ### The 4 components of the application that follow the Model View Controller(MVC) model are:
   * **Logic** - This is the code that allows everything to function. It acts as a controller.
   * **UI** - This is how information is displayed to the user. It acts as the view.
   * **Model** - This is the database formats used in the application.
+  * **IVLE API** - This is functions used to retrieve information from IVLE.
  ### This is the behind the scenes of the application:
   * After user has been granted access to IVLE through OAuth, a UI will pop-up to view all relevant information.
   * As the UI is created, the logic runs independently to retrieve data.
@@ -90,6 +90,8 @@ The following is the objects present in our DownloaderUI class:
 | 2 | QSettings     | Qt has a library called QSettings. The QSettings class provides persistent platform-independent application setting|
 | 3 | SQLite DB     |  Qt has a library called QtSQL. This class allows users to create SQLite DB and store information there|
  
+## 2.5 IVLE API component
+Everything can be found here regarding the IVLE API [](https://wiki.nus.edu.sg/display/ivlelapi/Module).
 ## 3. Implementation:
 ### 3.1 Login Implementation
  * This code can be found in MainWindow.cpp.
