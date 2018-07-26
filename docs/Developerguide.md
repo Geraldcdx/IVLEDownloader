@@ -153,7 +153,8 @@ Everything can be found here regarding the [IVLE API](https://wiki.nus.edu.sg/di
 The testing of the IVLE Downloader has been successful.
 
 ## 5. Dev Ops
-### 5.1 Windows Deployment:
+### 5.1 Windows Deployment: To deploy a Windows Qt app, you will need files from a few locations.
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Qt_Deployment_Structure_Windows.png"width="800"></p>
  1. Create a new deployment folder.
  2. Go to the location where Qt was installed.
  3. Copy the following into the deployment folder:
