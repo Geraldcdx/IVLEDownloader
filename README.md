@@ -22,7 +22,7 @@
   
 ### Site Map
 * [About Us](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/Aboutus.md)
-* [User guide](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/Userguide.md) - Click here for a step-by-step guide to download the files and feature of the app.
+* [User guide](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/Userguide.md) - Click here for a step-by-step guide to download the files and features of the app.
 * [Developers guide](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/Developerguide.md) - Click here for Developers
 
 ### Acknowledgments
