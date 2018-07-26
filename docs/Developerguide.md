@@ -47,21 +47,21 @@
   * Below is a example model that should clarify your understanding:
    <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/usermodel1.png"width="700"></p>
    
- ## 2.2 UI component
- ### *The UI components work hand in hand with the logic component to get relevant information to display on the UI to allow users to view all offline IVLE information.*
- <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/UI.png" width="600"></p>
- 
- ### **Features of this IVLE Downloader include:**
-| No       | Feature      |Function  |
+  ### **Further explanation of example model**
+| No       | Arrow                   |Example functions  |
 |----------- |:-----------------------|:-----|
-| 1             | User Interface(UI) | Students are able to interact with the downloaded files |
-| 2             | Files Tab | To view all files/documents from IVLE |
-| 3           | Announcements Tab | To view every single announcement downloaded from IVLE |
+| 1 | User executes app | User will activate app and input information. <br> For example, opening files, logging in to outlook, adding CAP scores and adding items in to-do-list |
+| 2| Code to set-up UI | UI will prompt Logic to run code to make the UI intended for the user.<br>For example, creating the DownloaderUI object along with all the different UI objects found in DownloaderUI. |
+| 3| Request for information | Logic will retrieve information from model. <br> For example,  |
 | 4   | Examinations Tab | To view exam dates and time |
 | 5   | TimeTable Tab | To view the everyday schedule |
 | 6   | NUSWhispers Tab | To view a NUS informal forum |
 | 7   | CAP Calculator Tab | A Cumulative Average Grade Point(CAP) calculator to help students calculate their potential cap and gauge personal goals per semester|
 | 8   | To-Do-List Tab  | For students to mark their important homework due |
+   
+ ## 2.2 UI component
+ ### *The UI components work hand in hand with the logic component to get relevant information to display on the UI to allow users to view all offline IVLE information.*
+ <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/UI.png" width="600"></p>
  
  ### The two main UI components:
   * **MainWindow.ui** : Sets up information such as API key, log in and directory to allow users to enjoy the full experience of the IVLE Downloader. This also provides a settings function that can be seen as a running application at the icons running.
