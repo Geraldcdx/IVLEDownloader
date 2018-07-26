@@ -14,9 +14,23 @@ The IVLE Downloader is the application that automatically downloads study materi
 #### Download the IVLE Downloader https://github.com/Geraldcdx/IVLEDownloader/releases and download the deployment.zip(this may take about 20-30minutes):
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/deployment3.png"width="800"></p>
 
+#For Windows:
 #### Click on the download button and save everything to a location easily accessed.**You will need to extract the file after!**
 #### After downloading all the files, click on this file,IVLEDownloader:
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Files.png" width="500"></p>
+
+#For MacOS:
+#### 1. After downloading the dmg file, launch IVLEDownloader.app
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/MacDeploy1.png" width="500"></p>
+
+#### 2. If this pops out, simply click on ok
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/MacDeploy2.png" width="500"></p>
+
+#### 3. Then head to your system preferences -> security and privacy. You should see the prompt "IVLEDownloader was bloacked from opening because it is not from an identified developer." Click on open anyway.
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/MacDeploy3.png" width="500"></p>
+
+#### 4. Lastly, if you are still prompted with this, click on open. IVLEDownloader should launch after this.
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/MacDeploy4.png" width="500"></p>
 
 #### After downloading and running the IVLEDownloader file it should show you this:
 ![Alt-Text](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/login.png)
