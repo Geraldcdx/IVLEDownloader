@@ -32,7 +32,7 @@
 ## 2. Design:
  ### *The **Architecture Diagram** given below explains the high-level design of the App. Given below is a quick overview of each component.*
  ## 2.1 Architecture
- <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Overview.png" width="500"></p>
+ <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Overview.png" width="600"></p>
  
 
  ### When the app is executed, the first time users will be called to extract their APIKey and login. Users that has logged in and done set-up procedures will be brought into a UI.
@@ -45,11 +45,23 @@
   * As the UI is created, the logic runs independently to retrieve data.
   * The logic can choose to pull data from the model or from the Internet and store it in the model and then retrieve information from the model.
   * Below is a example model that should clarify your understanding:
-   <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/usermodel.png"width="700"></p>
+   <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/usermodel1.png"width="700"></p>
    
  ## 2.2 UI component
  ### *The UI components work hand in hand with the logic component to get relevant information to display on the UI to allow users to view all offline IVLE information.*
- <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/UI.png" width="700"></p>
+ <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/UI.png" width="600"></p>
+ 
+ ### **Features of this IVLE Downloader include:**
+| No       | Feature      |Function  |
+|----------- |:-----------------------|:-----|
+| 1             | User Interface(UI) | Students are able to interact with the downloaded files |
+| 2             | Files Tab | To view all files/documents from IVLE |
+| 3           | Announcements Tab | To view every single announcement downloaded from IVLE |
+| 4   | Examinations Tab | To view exam dates and time |
+| 5   | TimeTable Tab | To view the everyday schedule |
+| 6   | NUSWhispers Tab | To view a NUS informal forum |
+| 7   | CAP Calculator Tab | A Cumulative Average Grade Point(CAP) calculator to help students calculate their potential cap and gauge personal goals per semester|
+| 8   | To-Do-List Tab  | For students to mark their important homework due |
  
  ### The two main UI components:
   * **MainWindow.ui** : Sets up information such as API key, log in and directory to allow users to enjoy the full experience of the IVLE Downloader. This also provides a settings function that can be seen as a running application at the icons running.
