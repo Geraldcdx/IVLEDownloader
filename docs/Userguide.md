@@ -23,7 +23,7 @@ The IVLE Downloader is the application that automatically downloads study materi
 #### 1. After downloading the dmg file, launch IVLEDownloader.app
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/MacDeploy1.png" width="500"></p>
 
-#### 2. If this pops out, simply click on ok
+#### 2. If this pops out, simply click on 'OK'.
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/MacDeploy2.png" width="500"></p>
 
 #### 3. Then head to your system preferences -> security and privacy. You should see the prompt "IVLEDownloader was bloacked from opening because it is not from an identified developer." Click on open anyway.
