@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>IVLE Downloader</string>
+   <string>Offline IVLE</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
