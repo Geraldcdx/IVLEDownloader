@@ -3,5 +3,6 @@
         <file>icon.png</file>
         <file>icon_attn.png</file>
         <file>transparentlogo.png</file>
+        <file>OIVLE.png</file>
     </qresource>
 </RCC>

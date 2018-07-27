@@ -16,6 +16,8 @@ SettingsDialog::SettingsDialog(QWidget *parent) :
     ui(new Ui::SettingsDialog)
 {
     ui->setupUi(this);
+    this->setWindowIcon(QPixmap(":/icons/OIVLE.png"));
+    this->setWindowTitle("  Offline IVLE");
     this->setAttribute(Qt::WA_QuitOnClose,false);
     this->setWindowFlags((Qt::WindowFlags) (Qt::Window | Qt::WindowStaysOnTopHint | Qt::WindowTitleHint | Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint  & (~Qt::WindowFullscreenButtonHint)) );
     webviewDialog = new QDialog(this);

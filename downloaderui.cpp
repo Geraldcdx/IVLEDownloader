@@ -36,6 +36,8 @@ DownloaderUI::DownloaderUI(QWidget *parent) :
     ui(new Ui::DownloaderUI)
 {
     ui->setupUi(this);
+    this->setWindowTitle("    Offline IVLE");
+    this->setWindowIcon(QPixmap(":/icons/OIVLE.png"));
     setupFiles(DIRECTORY);//FILES TAB //change directory to make it your own path
     initDB();//Datebase creation & to-do-list implementation
     initParser();//ANNOUNCEMENT UI && Exams parsing UI
