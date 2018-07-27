@@ -136,7 +136,7 @@ MainWindow::MainWindow(QWidget *parent) :
         settingsDialog->setDlText(QString("Download to: %1").arg(settings->directory()));
         processToken(settings->token());
     }
-
+//========================================ADDED to make the UI for first time login and subsequent logins=================
     webviewDialog = new QDialog(this);// an object that is shown in the UI, code below will set the settings of the Dialog box seen
     webviewDialog->setLayout(new QBoxLayout(QBoxLayout::LeftToRight));
     webviewDialog->setAttribute(Qt::WA_QuitOnClose,false);
@@ -144,23 +144,22 @@ MainWindow::MainWindow(QWidget *parent) :
     webviewDialog->layout()->addWidget(webView);
     webviewDialog->layout()->setMargin(0);
     //SetMyValue("KEY","NULL");
-    if (GetMyValue("KEY","NULL").toString().length()!=21){
+    if (GetMyValue("KEY","NULL").toString().length()!=21){//FOR FIRST TIME USERS
         ivleLoginPage();
         getAPIkey();
         QString keys=GetMyValue("KEY","h").toString();
 
-    } else {
+    } else {//================================================FOR SUBSESQUENT USERS
         QString keys=GetMyValue("KEY","h").toString();
         //qDebug()<<keys;
         DownloaderUI UI;
         UI.setWindowFlags(Qt::Window);//add this to set windowflags
         UI.setModal(true);
         UI.exec();
-
     }
 
 }
-
+//=======================================================================================================================
 MainWindow::~MainWindow()
 {
     delete ui;

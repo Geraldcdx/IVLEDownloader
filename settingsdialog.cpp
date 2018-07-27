@@ -104,6 +104,7 @@ void SettingsDialog::on_pushButton_3_clicked()
     adialog->show();
 }
 
+//Offline IVLE button
 void SettingsDialog::on_pushButton_4_clicked()
 {
     QSettings* regSett;
@@ -120,7 +121,7 @@ void SettingsDialog::on_pushButton_4_clicked()
     else QMessageBox::warning(this,"Failed","APIKEY is invalid, do parse a correct APIKEY before using the downloader!");
 
 }
-
+//Resets everything about the application!
 void SettingsDialog::on_pushButton_5_clicked()
 {
     webviewDialog2 = new QDialog(this);// an object that is shown in the UI, code below will set the settings of the Dialog box seen

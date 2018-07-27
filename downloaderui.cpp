@@ -41,7 +41,7 @@ DownloaderUI::DownloaderUI(QWidget *parent) :
     initParser();//ANNOUNCEMENT UI && Exams parsing UI
     ui->webView->load(QUrl("https://www.nuswhispers.com/home/")); //Add NUSWhispers
     setTableHeaders();//Adding CAP calculator
-    startOutlook();
+    startOutlook();//Adds outlook tab
 
 }
 void DownloaderUI::initParser()

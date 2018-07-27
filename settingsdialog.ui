@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>314</height>
+    <height>317</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -165,7 +165,7 @@
    <item>
     <widget class="QPushButton" name="pushButton_4">
      <property name="text">
-      <string>IVLE Downloader</string>
+      <string>Offline IVLE</string>
      </property>
     </widget>
    </item>
