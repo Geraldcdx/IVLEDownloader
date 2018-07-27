@@ -52,6 +52,8 @@ private slots:
     void getAPIkey();
        void parse(bool);
 
+       void on_pushButton_6_clicked();
+
 signals:
     void gottenToken(QString);
     void updateDirectory(QString);

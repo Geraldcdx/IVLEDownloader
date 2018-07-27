@@ -9,6 +9,7 @@
 #include <QWebFrame>
 #include <QUrl>
 #include <QSettings>
+#include <QDesktopServices>
 
 SettingsDialog::SettingsDialog(QWidget *parent) :
     QDialog(parent),
@@ -160,4 +161,9 @@ void SettingsDialog::parse(bool){
     regSett->setValue("KEY",APIKEY); //Store value of key defined by user
 
     //qDebug()<<regSett->value("KEY","does not exist");
+}
+
+void SettingsDialog::on_pushButton_6_clicked()
+{
+    QDesktopServices::openUrl(QUrl("https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/Userguide.md"));
 }
