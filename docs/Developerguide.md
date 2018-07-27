@@ -1,4 +1,4 @@
-# IVLE Downloader - Developer Guide
+# Offline IVLE - Developer Guide
 [User Guide](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/Userguide.md)<br>
 [README](https://github.com/Geraldcdx/IVLEDownloader/blob/master/README.md)
 ## 1. Setting Up:
