@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 
     QApplication a(argc, argv);
     a.setOrganizationName("Vincent");
-    a.setApplicationName("IVLE Downloader");
+    a.setApplicationName("Offline IVLE");
     //CREATES A SPLASH SCREEN
     QSplashScreen *splashed=new QSplashScreen;
     splashed->setPixmap(QPixmap(":/icons/transparentlogo.png"));
