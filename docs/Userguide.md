@@ -1,4 +1,4 @@
-# IVLE Downloader - User guide:
+# Offline IVLE - User guide:
 [Developer Guide](https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/Developerguide.md)<br>
 [ReadMe](https://github.com/Geraldcdx/IVLEDownloader/blob/master/README.md)
   ## 1. Introduction
@@ -10,10 +10,10 @@
 ## 4. FAQ
 
 ### 1.Introduction
-The IVLE Downloader is the application that automatically downloads study material/announcements/exam details from the IVLE management system in National University of Singapore(NUS). This automation will remove the process of manually downloading files and hence saves a lot of time for you! Furthermore, you will be able to enjoy the addition features added into the application.
+The Offline IVLE is the application that automatically downloads study material/announcements/exam details from the IVLE management system in National University of Singapore(NUS). This automation will remove the process of manually downloading files and hence saves a lot of time for you! Furthermore, you will be able to enjoy the addition features added into the application.
 
-## 2. Download(This deployment is large because we have not cleaned up extra libraries yet)
-#### Download the IVLE Downloader https://github.com/Geraldcdx/IVLEDownloader/releases and download the deployment.zip(this may take about 20-30minutes):
+## 2. Download
+#### Download the Offline IVLE https://github.com/Geraldcdx/IVLEDownloader/releases and download the deployment.zip(this should take 5 mins):
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/deployment3.png"width="800"></p>
 
 ## For Windows:
