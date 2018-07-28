@@ -13,7 +13,7 @@
 The Offline IVLE is the application that automatically downloads study material/announcements/exam details from the IVLE management system in National University of Singapore(NUS). This automation will remove the process of manually downloading files and hence saves a lot of time for you! Furthermore, you will be able to enjoy the addition features added into the application.
 
 ## 2. Download
-#### Download the Offline IVLE https://github.com/Geraldcdx/IVLEDownloader/releases and download the deployment.zip(this should take 5 mins):
+#### Go to the release link of Offline IVLE -> https://github.com/Geraldcdx/IVLEDownloader/releases and download the deployment.zip(this should take 5 mins):
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/deployment3.png"width="800"></p>
 
 ## For Windows:
