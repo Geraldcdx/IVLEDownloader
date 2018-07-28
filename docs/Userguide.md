@@ -22,7 +22,7 @@ The Offline IVLE is the application that automatically downloads study material/
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/Files.png" width="500"></p>
 
 ## For MacOS:
-#### 1. After downloading the dmg file, launch IVLEDownloader.app
+#### 1. After downloading the dmg file, shift the app to your applications folder and launch IVLEDownloader.app
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/MacDeploy1.png" width="500"></p>
 
 #### 2. If this pops out, simply click on 'OK'.
