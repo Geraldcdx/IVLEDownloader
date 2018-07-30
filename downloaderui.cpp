@@ -44,6 +44,7 @@ DownloaderUI::DownloaderUI(QWidget *parent) :
     ui->webView->load(QUrl("https://www.nuswhispers.com/home/")); //Add NUSWhispers
     setTableHeaders();//Adding CAP calculator
     startOutlook();//Adds outlook tab
+    this->setWindowFlags(Qt::Window);
 
 }
 void DownloaderUI::initParser()

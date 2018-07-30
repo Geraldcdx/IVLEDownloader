@@ -118,7 +118,6 @@ void SettingsDialog::on_pushButton_4_clicked()
     {
     DownloaderUI UI;
     this->close();
-    UI.setWindowFlags(Qt::Window);
     UI.setModal(true);
     UI.exec();
     this->show();

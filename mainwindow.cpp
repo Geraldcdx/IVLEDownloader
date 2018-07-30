@@ -157,7 +157,6 @@ MainWindow::MainWindow(QWidget *parent) :
         QString keys=GetMyValue("KEY","h").toString();
         //qDebug()<<keys;
         DownloaderUI UI;
-        UI.setWindowFlags(Qt::Window);//add this to set windowflags
         UI.setModal(true);
         UI.exec();
     }
