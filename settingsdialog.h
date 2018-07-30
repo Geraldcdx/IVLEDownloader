@@ -30,6 +30,7 @@ public slots:
     void setLabelText(const QString&);
     void setDlText(const QString&);
     void setDisplayedSettings(QVariantMap);
+    int checkCon();
 
 
 

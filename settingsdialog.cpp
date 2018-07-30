@@ -110,6 +110,8 @@ void SettingsDialog::on_pushButton_3_clicked()
 //Offline IVLE button
 void SettingsDialog::on_pushButton_4_clicked()
 {
+    if(checkCon()==0){
+
     QSettings* regSett;
     regSett = new QSettings("Organization-name","Project-name");
     if(regSett->value("KEY","failed").toString().length()==21)
@@ -122,6 +124,8 @@ void SettingsDialog::on_pushButton_4_clicked()
     this->show();
     }
     else QMessageBox::warning(this,"Failed","APIKEY is invalid, do parse a correct APIKEY before using the downloader!");
+    }
+    //else QMessageBox::information(this,"No connection","You do not have a internet connection. This app needs to have an internect connection");
 
 }
 //Resets everything about the application!
@@ -168,4 +172,21 @@ void SettingsDialog::parse(bool){
 void SettingsDialog::on_pushButton_6_clicked()
 {
     QDesktopServices::openUrl(QUrl("https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/Userguide.md"));
+}
+int SettingsDialog::checkCon()
+{
+    //CODE TO CHECK INTERNET CONNECTION if not dont open
+    QNetworkAccessManager nam;
+    QNetworkRequest req(QUrl("http://www.google.com"));
+    QNetworkReply *reply = nam.get(req);
+    QEventLoop loop;
+    connect(reply, SIGNAL(finished()), &loop, SLOT(quit()));
+    loop.exec();
+    if(reply->bytesAvailable())return 0;
+    //QMessageBox::information(this, "Info", "You are connected to the internet :)");
+    else{
+        QMessageBox::critical(this, "Info","You are not connected to the internet! This app cannot be opened without an internet connection, if you want to view your files go to the directory you saved at. Please try again after you have a stable connection!");
+        return 1;
+    }
+    //============ENDS HERE============================================
 }

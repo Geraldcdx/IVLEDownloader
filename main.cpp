@@ -3,9 +3,9 @@
 #include "lapi.h"
 #include <QSplashScreen>
 #include <QTimer>
+#include <QNetworkAccessManager>
 int main(int argc, char *argv[])
 {
-
     QApplication a(argc, argv);
     a.setOrganizationName("Vincent");
     a.setApplicationName("Offline IVLE");

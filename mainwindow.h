@@ -49,6 +49,7 @@ public slots:
     void createFetcher();
     void updateRecent(const QString& filename);
     void processSettingsDialog(QVariantMap);
+    void checkCon();
     
 private slots:
     void on_pushButton_clicked();
@@ -83,6 +84,7 @@ private:
     QWebView* webView;
     QDialog* webviewDialog;
     DownloaderUI* UI;
+    int failedcon=0;
 };
 
 #endif // MAINWINDOW_H
