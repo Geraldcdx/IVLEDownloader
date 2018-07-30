@@ -100,10 +100,10 @@ The Offline IVLE is the application that automatically downloads study material/
 <p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/scalingprop3.png" width="500"></p>
 
 ### My Offline IVLE refuses to work!!!?
-#### Click on the IVLE API Parsing in the settings and try again. This setting will reset your API key and prevent errors from happening.
+#### -Click on the IVLE API Parsing in the settings and try again. This setting will reset your API key and prevent errors from happening.
 
 ### Problem with logging in/ enabling your APIKEY?
-#### Go to this url, https://ivle.nus.edu.sg/default.aspx?ReturnUrl=%2fLAPI%2fdefault.aspx, click on enable APIKEY. Relaunch Offline IVLE
+#### -Go to this url, https://ivle.nus.edu.sg/default.aspx?ReturnUrl=%2fLAPI%2fdefault.aspx, click on enable APIKEY. Relaunch Offline IVLE
 
 
 
