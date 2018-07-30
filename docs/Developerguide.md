@@ -150,8 +150,8 @@ Everything can be found here regarding the [IVLE API](https://wiki.nus.edu.sg/di
 * Since it was done in the summer, there was no modules available. However, we requested help from professors to get CP2106 and CS2040 available to be used for testing when we were developing the project prototype.
 * After the prototype was created we had asked NUS Students that took different modules as well as people who have no modules at all to test. The use case document is here https://github.com/Geraldcdx/IVLEDownloader/blob/master/Use%20Cases.docx and they followed the github User guide to download and test our project.
 * Here is the test data of 10 people collated on 30th July 2018
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/workingfeatures.png"width="800"></p>
-<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/usefulfeatures.png"width="800"></p>
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/workingfeatures.png"width="600"></p>
+<p align="center"><img src="https://github.com/Geraldcdx/IVLEDownloader/blob/master/docs/pics/usefulfeatures.png"width="600"></p>
 
 The reason why there were some people said it was not working is because they faced internet connectivity issues and if there are no modules available on IVLE, there would not be any information displayed in the UI, hence they were could not conclude if it was working. The app works for both MACOS and Windows and people have feedback a few bugs that we have fixed. Overall, students enjoyed used all the tabs except the NUSWhisper ( which we feel too is a novelty on it's own but we included it just cause it would be more interesting).
 
