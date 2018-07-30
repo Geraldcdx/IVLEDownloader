@@ -16,6 +16,7 @@ public:
     QString Module();
     int Creditunits();
     QString Grade();
+    int diffGrade();
     ~Dialog();
 
 private slots:

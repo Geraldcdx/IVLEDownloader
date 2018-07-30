@@ -365,12 +365,18 @@ void DownloaderUI::on_pushButton_2_clicked()
     else{
         QString mod=add.Module();
         QString grade=add.Grade();
+        int Dgrade=add.diffGrade();
         float units=add.Creditunits();
 
         //qDebug()<<mod<<grade<<units;
         previousCAP=totalcreditunits*CAP;//takes the previous cap
         totalcreditunits+=units;//total units
+        if(Dgrade==0){
         gradescore=convert[grade];
+        }else {
+            gradescore=Dgrade;
+            grade="User's Value";
+        }
         CAP=(gradescore*units+previousCAP)/totalcreditunits;
         //qDebug()<<gradescore<<units<<previousCAP<<totalcreditunits;
 

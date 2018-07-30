@@ -37,6 +37,10 @@ QString Dialog::Grade()
 {
     return ui->comboBox->currentText();
 }
+int Dialog::diffGrade()
+{
+    return (ui->lineEdit_2->text()).toInt();
+}
 
 Dialog::~Dialog()
 {
@@ -45,7 +49,7 @@ Dialog::~Dialog()
 
 void Dialog::on_buttonBox_accepted()
 {
-    if(ui->comboBox->currentText()=="Choose your grade"||Grade()==0||Module()==NULL){
+    if((ui->comboBox->currentText()=="Choose your grade" && diffGrade()==0)||Grade()==0||Module()==NULL){
         QMessageBox::warning(this,"Incomplete","Please fill in the details correctly");
     }
     else accept();
