@@ -156,7 +156,7 @@ Everything can be found here regarding the [IVLE API](https://wiki.nus.edu.sg/di
 The reason why there were some people said it was not working is because they faced internet connectivity issues and if there are no modules available on IVLE, there would not be any information displayed in the UI, hence they were could not conclude if it was working. The app works for both MACOS and Windows and people have feedback a few bugs that we have fixed. Overall, students enjoyed used all the tabs except the NUSWhisper ( which we feel too is a novelty on it's own but we included it just cause it would be more interesting).
 
 ### 4.2 Conclusion:
-The testing of the IVLE Downloader has been successful and there are still a few bugs that we are trying to fix. In all, it is reliable.
+The testing of the IVLE Downloader has been successful and there are still a few bugs that we are trying to fix. In all, it is reliable as it works for all users MACOS,Windows, students that have no IVLE modules and students with up to 5 modules.
 
 ## 5. Dev Ops
 ### 5.1 Windows Deployment: To deploy a Windows Qt app, you will need files from a few locations.
