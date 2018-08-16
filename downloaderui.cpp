@@ -53,7 +53,7 @@ void DownloaderUI::initParser()
     connect(innerPage, SIGNAL(loadFinished(bool)), SLOT(parse(bool)));//connects with modules code and ID parsing
     connect(innerPage2, SIGNAL(loadFinished(bool)), SLOT(parse2(bool)));//connects with announcement parsing
     connect(innerPage3, SIGNAL(loadFinished(bool)), SLOT(parse3(bool)));//connects with exam details parsing
-    removeTabs();//removes all the default tabs
+    //removeTabs();//removes all the default tabs
     ModulesPageLoader();//Load announcement modules pages
     poll(); //Timer to poll every 1 hour
 }
@@ -61,13 +61,16 @@ void DownloaderUI::initParser()
 //Preprocessing that clears default tabs
 void DownloaderUI::removeTabs()
 {
-    //qDebug()<<ui->tabWidget_2->count();
-    ui->tabWidget_2->setCurrentIndex(0);
-    ui->tabWidget_2->removeTab(2);
-    ui->tabWidget_2->removeTab(1);
+
+//    ui->tabWidget_2->setCurrentIndex(0);
+//    ui->tabWidget_2->removeTab(2);
+//    ui->tabWidget_2->removeTab(1);
+//    ui->tabWidget_2->removeTab(0);
+    for (int i = ui->tabWidget_2->count() - 1; i > ui->tabWidget_2->currentIndex(); --i) {
+       ui->tabWidget_2->removeTab(i);
+    }
     ui->tabWidget_2->removeTab(0);
-    //qDebug()<<"Test here";
-    //qDebug()<<ui->tabWidget_2->count();
+
 }
 
 //FILES UI
@@ -111,11 +114,12 @@ void DownloaderUI::poll()
 {
 QTimer *timer = new QTimer(this);
 QObject::connect(timer, SIGNAL(timeout()), this, SLOT(ModulesPageLoader()));
-timer->start(3600000); //time specified in ms to poll modulesPageLoader every 1 hour first
+timer->start(3600000/2); //time specified in ms to poll modulesPageLoader every 1/2 hour first
 }
 
 void DownloaderUI::ModulesPageLoader()
 {
+    removeTabs();
     QString modules=QString("https://ivle.nus.edu.sg/api/Lapi.svc/Modules?APIKey=%1&AuthToken=%2&Duration=0&IncludeAllInfo=false").arg(APIKEY).arg(TOKEN);
     QUrl url2(modules);
     innerPage->setUrl(url2);
